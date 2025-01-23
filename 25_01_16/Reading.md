@@ -28,3 +28,43 @@
     - Specific and Actionable questions -> write down possible answers
 4. Iterate
     - bring back to stakeholder to iterate
+
+# Chapter 6
+# Using Exploratory Questions
+- ask questions to understand problems
+- generalize the problem
+- ask exploratory questions
+    - __WHAT__ definition
+        - questions about patterns in the world with factal solid answers
+    - __WHY__ purpose
+        - elicit information
+        - prioritiz efforts 
+        - refine goals
+    - examples -- premature optimization -- how to improve coding speed
+        - program in a natural way
+        - ask exploratory questions
+        - identify problemn with `profiler` and optimize performance
+    - __HOW__ to answer by Collecting, Merging, and Creating New Data
+    
+    - EDA
+        - couuld be all below
+            - structure of dataset
+                - number of observations
+                - variables
+            - validate the dataset
+                - check if data is reasonable (voting population all over 18)
+            - everthing else before fitting a stat model
+        - should be
+            - Learning the structure of your dataset (what constitutes a unit of observation, what variables are in the dataset)
+
+            - Validating your dataset (does the data pass the sniff test? Does it exhibit the basic properties you would expect given what it claims to be?)
+
+# chapter 7
+# Answering Exploratory Questions
+
+- what makes a data scientist great
+    - what to model
+    - strength and limitation among models
+- things to do
+    - Internal Validity - how well questions are answered with data studying
+    - External Validity - how well can the model work in other situations
