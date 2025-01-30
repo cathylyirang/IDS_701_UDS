@@ -68,3 +68,18 @@
 - things to do
     - Internal Validity - how well questions are answered with data studying
     - External Validity - how well can the model work in other situations
+
+# What Google Learned From Its Quest to Build the Perfect Team
+- Rozovsky: open communication, trust, and creativity.
+- Google’s Project Aristotle found no consistent patterns in these elements.
+- Key Findings:
+    - equal conversational turn-taking and high social sensitivity (awareness of others’ emotions).
+    - psychological safety
+- Psychological Safety:
+    - Rozovsky: norms like mutual respect, trust, and empathy
+    - Google’s approach: data-driven methods to encourage these behaviors, making it easier to discuss emotions and norms in the workplace.
+- Real-World Implementation: A Google manager, Matt Sakaguchi, used Project Aristotle’s findings to address team challenges. By encouraging vulnerability and open communication, he strengthened team cohesion and performance.
+- Impact of the Research: 
+    - Project Aristotle demonstrated the importance of emotional connections and team norms in productivity, underscoring that success often depends on unquantifiable human experiences.
+    - Google’s data-driven insights helped create practical tools and language for improving workplace dynamics and fostering psychological safety.
+- Broader Implications: The research affirmed long-standing managerial wisdom about empathy and collaboration while offering new frameworks for modern workplaces to optimize team effectiveness.
