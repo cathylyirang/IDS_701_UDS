@@ -83,3 +83,5 @@
     - Project Aristotle demonstrated the importance of emotional connections and team norms in productivity, underscoring that success often depends on unquantifiable human experiences.
     - Google’s data-driven insights helped create practical tools and language for improving workplace dynamics and fostering psychological safety.
 - Broader Implications: The research affirmed long-standing managerial wisdom about empathy and collaboration while offering new frameworks for modern workplaces to optimize team effectiveness.
+
+# Answering Exploratory Questions: Internal Validity
