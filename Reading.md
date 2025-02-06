@@ -124,4 +124,18 @@
     - A model’s value is determined by its improvement over the best available alternative.
     - Balancing errors appropriately is essential for effective real-world deployment.
 
-### 9.1 Fairness and Passive Prediction
+### 11.1 Fairness and Passive Prediction
+
+
+## 2025//2/6 Lecture
+- data science is about solving problems
+- solve problems by answeringh questions
+- errors and uncertainty
+    - understand errors
+    - understand differences among models
+
+- practice
+    - company buying mortgages
+    - what mortgages to buy
+    - both training and deployment
+    
