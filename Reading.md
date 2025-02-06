@@ -1,3 +1,61 @@
+# Solving Problems by Answering Questions - reading
+
+## Syllabus
+1. Syllabus
+    - Course description
+        - Use real world data to answer questions
+            - Experiments and A/B testing
+            - Causal inference
+        - Key to pass
+            - Reading + exercise
+        - Big ideas
+            - Use data to answer - questions not just max AUC score
+            - Choose to use proper tool
+            - Reasoning rigorously about uncertainty and error
+        - Prerequisite 
+            - Inferential stat and stat modeling
+            - Python and R
+
+
+        - Assignment and grading
+            - Participation 20%
+            - Midterm 20%
+            - Exercise 20% - drop lowest 
+            - Reading reflection and quiz 20% - drop lowest 
+            - Team project 20%
+        Question: lecture video?
+        - Solving problems
+        Data science is about solving problems
+        did you make your stakeholder’s life better by solving a problem they faced?
+        Data scientists solve problems by answering questions, and the question you are asking determines what tool is appropriate.
+        what question, if answered, would make it easier to solve this problem?
+        Reasoning rigorously about uncertainty and errors is what differentiates good data scientists from great data scientists
+
+
+
+
+
+
+
+
+## Chapter 1 Solving problems
+1. Idea 1: Solving Problems
+2. Idea 2: Solving Problems by Answering Questions
+    - Exploratory Questions: Questions about patterns and structure in the world.
+        - Help us to understand the problem space better and prioritizing subsequent efforts.
+        - examples if the company wants to improve recruitment of high quality employees
+            - How many job applications are you receiving when you post a job?
+            - What share of your current job applicants are of high quality?
+            - What share of employees you try to hire accept your offer?
+            - What share of employees you do hire turn out to be successful employees?
+    - Passive Prediction Questions: Questions about likely outcomes for individual observations or entities.
+        - Useful for targeting individuals for additional attention or automating certain tasks.
+    - Causal Questions: Questions about the consequences of actions or interventions being considered.
+        - Useful for deciding on appropriate courses of action.
+
+3. Idea 3: Being Thoughtful About Being Wrong
+
+
 ## Chapter 9 Using Passive Prediction Questions
 - Exploratory Questions vs. Passive Prediction Questions
     - Exploratory Questions help understand problems and prioritize efforts but don’t solve stakeholder problems alone.
