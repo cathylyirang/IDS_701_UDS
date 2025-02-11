@@ -125,6 +125,12 @@
     - Balancing errors appropriately is essential for effective real-world deployment.
 
 ### 11.1 Fairness and Passive Prediction
+- mistaks qty = qlt
+- Risk Assessment models in the US criminal justice system
+    - racial bias
+    
+
+
 
 
 ## 2025//2/6 Lecture
