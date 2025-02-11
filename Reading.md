@@ -128,6 +128,10 @@
 - mistaks qty = qlt
 - Risk Assessment models in the US criminal justice system
     - racial bias
+
+- Do you think data scientist are in a privileged position to answer this type of question (decide what types of errors to minimize)?
+    - stakeholder decides the situation
+    - data scientist designs and adjusts the model
     
 
 
