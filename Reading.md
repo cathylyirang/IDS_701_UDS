@@ -133,7 +133,24 @@
     - stakeholder decides the situation
     - data scientist designs and adjusts the model
     
-
+- questions
+    - data imbalance
+        - equal - not representing the true population composition
+        - uneuqal - result leaning towards the majority
+    - if we don't think race should be considered to make decisions
+        - remove race to make prediction
+        - add race for inference or research only
+        
+## Chapter 12 Passive Prediction Questions and External Validity
+- overview
+    - internal validity [已知模型的inference] measures how well a model captures meaningful variation in the data we already have
+    - external validity [未知数据的prediction] measures how well our model is likely to perform when faced with new data.
+        - only performs well in similar environment
+- Extrapolation and Training Parameter Ranges
+    - extrapolation -> prediction on untrained data
+    - tested data Constitutes Extrapolation 
+    - Extrapolation with Non-Tabular Data
+    - Train-Test-Splits and External Validity
 
 
 
@@ -143,6 +160,7 @@
 - errors and uncertainty
     - understand errors
     - understand differences among models
+        
 
 - practice
     - company buying mortgages
