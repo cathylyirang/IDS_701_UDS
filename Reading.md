@@ -152,7 +152,38 @@
     - Extrapolation with Non-Tabular Data
     - Train-Test-Splits and External Validity
 
-
+## Chapter 13 Interpretability and Passive Prediction
+- “Stop Using Black Boxes” by Cynthia Rudin.
+    - The author argues that high-stakes decisions (e.g., criminal justice, healthcare) require models that are directly interpretable rather than “black boxes” with posthoc explanations 1811.10154v3.
+    - She notes that posthoc explanations can be misleading or incomplete, because they approximate a black box rather than reflect its true workings 1811.10154v3.
+    - Many black box models, especially when trained on structured data, do not consistently outperform simpler, interpretable models; thus, the trade-off between interpretability and accuracy can be illusive 1811.10154v3.
+    - The paper emphasizes that interpretable models can help identify data issues, expose bias, and are much easier to troubleshoot or audit, which is critical in settings where decisions can profoundly affect people’s lives 1811.10154v3.
+    - Finally, the author highlights legal, ethical, and policy implications, suggesting that mandating interpretable methods for high-stakes scenarios could improve transparency and accountability in the deployment of machine learning systems 1811.10154v3.
+- Who is Cynthia Rudin? A truly amazing scholar.
+    - Pioneering “interpretable AI”: Cynthia Rudin has spent 15 years creating machine learning models that reveal how they work, especially for critical domains like criminal justice, healthcare, and energy reliability.
+    - $1 million Squirrel AI Award: She became the second winner of this new AAAI prize, likened to a “Nobel Prize” for AI benefiting humanity, for her leadership in transparent, responsible AI.
+    - Real-world impact:
+        - Helped Con Edison predict which electrical manholes might explode.
+        - Designed simple, point-based models for hospitals to predict post-stroke seizures.
+        - Created algorithms (adopted by Cambridge Police and later NYPD) that spot whether a crime is part of a criminal pattern.
+    - Rejecting black boxes: Rudin shows that interpretable models can match or exceed the accuracy of opaque “black box” algorithms, negating the argument that transparency comes at the expense of predictive power.
+    - High-stakes examples:
+        - She scrutinized COMPAS, a proprietary model used in bail/parole decisions, arguing that simpler, open models perform equally well without hiding their logic.
+        - She advocates strongly against black box approaches in socially sensitive areas.
+    - Academic perseverance: At first, her research struggled to find standard publication outlets—there were no established categories for her work. Now, interpretable ML has become a recognized and growing subfield.
+    - Broad recognition:
+        - Praised by the Cambridge Police Department for advancing crime analysis.
+        - Mentors and colleagues (Ingrid Daubechies, Robert Schapire) credit Rudin’s independence, community-building, and focus on real-world problems.
+        - She holds multiple appointments at Duke and is a Fellow of the American Statistical Association and the Institute of Mathematical Statistics.
+    - Vision for AI: Rudin’s work and influence underscore that for high-stakes decisions, AI can—and should—be both accurate and transparent, ensuring trust and accountability.
+- Using Black Boxes requires trusting the data too.
+    - Increasing role of automation: Many aspects of the criminal justice system now use software—risk assessments, forensic analysis, parole decisions—raising fairness concerns when lives are on the line.
+    - Proprietary “black box” software: Companies keep algorithms and source code secret to protect trade secrets, preventing defendants from scrutinizing how results are generated.
+    - Real-life effects: Examples include Glenn Rodríguez’s parole being impacted by a COMPAS score he couldn’t fully contest, and Billy Ray Johnson’s life sentence hinging partly on DNA software (TrueAllele) whose source code was withheld.
+    - Trade secrets vs. due process: Courts often uphold companies’ intellectual property interests over defendants’ right to examine evidence. This erodes defendants’ ability to challenge or understand the technology used against them.
+    - Call for transparency: The article argues that protective orders can safeguard proprietary information while still allowing defense teams to scrutinize potentially flawed software, preserving fairness and constitutional rights.
+    - Legal context: The Supreme Court’s potential hearing of Wisconsin v. Loomis could clarify whether sentencing based on secret risk-assessment algorithms violates due process, and legislatures may need to act if the Court does not.
+    - 
 
 ## 2025//2/6 Lecture
 - data science is about solving problems
@@ -160,7 +191,7 @@
 - errors and uncertainty
     - understand errors
     - understand differences among models
-        
+ 
 
 - practice
     - company buying mortgages
