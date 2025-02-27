@@ -245,5 +245,39 @@
             - $Y_{i}^{1}$ = **outcome where treated**
     - $D_i \in \{0,1\}$ = **actual treatment condition**
 
-- Example
-    - $\delta_{Mona} = Y_{Mona}^1 - Y_{Mona}^0$
+- Individual treatment effect
+    - $\delta_{Mona} = Y_{Mona}^1 - Y_{Mona}^0$  **Fundamental problem of causal inference**
+
+- ATE = Average treatment effect of population = $\frac{1}{N}\Sigma\delta_i$ = $\frac{1}{N}\Sigma(Y_i^1-Y_i^0)$ = $E(Y_i^1-Y_i^0)$
+
+- well defined
+    - $E(Y^1|D=1)$   <- and observable
+    - $E(Y^0|D=1)$   <- but not observable
+- ATE = $E(Y_i^1-Y_i^0)$ <- not abservable
+- $\widehat{ATE}$ = $E(Y_i^1|D=1)-E(Y_i^0|D=0)$
+- $\widehat{ATE}$ = $E(Y_i^1|D=1)-E(Y_i^0|D=0) + E(Y_i^0|D=1)-E(Y_i^0|D=1)$
+- $\widehat{ATE}$ = $E(Y_i^1|D=1)-E(Y_i^0|D=1) + E(Y_i^0|D=1)-E(Y_i^0|D=0)$
+- $\widehat{ATE}$ = $[E(Y_i^1|D=1)-E(Y_i^0|D=0)] + [E(Y_i^0|D=1)-E(Y_i^0|D=1)]$
+- $\widehat{ATE}$ = $[ATT] + E(Y_i^0|D=1)-E(Y_i^0|D=1)$
+- ATT = Average Treatment 
+1. No baseline differences --> don't like gym so don't go
+    - $E(Y_i^0|D=1)-E(Y_i^0|D=0) = 0$
+    - if (1) exists, $\widehat{ATE}$ = ATT$ = treatment effect for D=1
+    - if (1) exists, $\widehat{ATE}$ = $[E(Y_i^1|D=1)-E(Y_i^0|D=0)]$
+    - $ATE = \lambda[E(Y_i^1|D=1)-E(Y_i^0|D=1)] +(1-\lambda)[E(Y_i^1|D=0)-E(Y_i^0|D=0)]$
+2. No difference tretment effects: like gym so don't need to go
+    - $E=(Y_i^1|D=1)-E(Y_i^0|D=1)=E(Y_i^1|D=0)-E(Y_i^0|D=1)$
+
+|  | T=0 | T=1 |
+|--|-----|-----|
+| D=0 | (1) 30 |  (2)  |
+| D=1 | (3) |  (4) 25 |
+
+- observable if D = T --> (1)(4)
+- non-observable if D != T --> (2)(3)
+
+- No baseline differences = Same T regardless of D
+- No difference tretment effects = 
+- $\widehat{ATE} = -5 = 25-30 $ 
+- $ATT = (4)-(3) = 5$
+
