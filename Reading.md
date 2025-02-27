@@ -235,8 +235,15 @@
     - understand differences among models
  
 
-- practice
-    - company buying mortgages
-    - what mortgages to buy
-    - both training and deployment
-    
+## 2025/02/27 Lecture
+- Notation
+    - $i \in \{1, 2, ... N\}$ ~ **individual**
+    - $T \in \{0,1\}$ ~ yes or no
+    - $Y$ ~ **estimated outcome** what the future customers' answer are yes or no
+        - $Y_{i}^{T}$
+            - $Y_{i}^{0}$ = **outcome where not treated**
+            - $Y_{i}^{1}$ = **outcome where treated**
+    - $D_i \in \{0,1\}$ = **actual treatment condition**
+
+- Example
+    - $\delta_{Mona} = Y_{Mona}^1 - Y_{Mona}^0$
