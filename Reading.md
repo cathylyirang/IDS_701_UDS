@@ -183,7 +183,49 @@
     - Trade secrets vs. due process: Courts often uphold companies’ intellectual property interests over defendants’ right to examine evidence. This erodes defendants’ ability to challenge or understand the technology used against them.
     - Call for transparency: The article argues that protective orders can safeguard proprietary information while still allowing defense teams to scrutinize potentially flawed software, preserving fairness and constitutional rights.
     - Legal context: The Supreme Court’s potential hearing of Wisconsin v. Loomis could clarify whether sentencing based on secret risk-assessment algorithms violates due process, and legislatures may need to act if the Court does not.
-    - 
+
+## Chapter 14 
+- Why Causal Questions Matter
+    - They aim to predict the consequences of an action or intervention (e.g., giving a new drug, changing an app feature), rather than merely describing or predicting existing patterns.
+    - Stakeholders often pose Causal Questions out of risk aversion: they want to know likely outcomes before rolling out an intervention at full scale.
+- Relation to Exploratory & Predictive Work
+    - Often arise after noticing a pattern from Exploratory or Passive Prediction work (e.g., “High blood pressure is linked to complications—what if we treat it?”).
+    - These questions focus on active manipulation, whereas Exploratory or Passive Predictive Questions help identify “what is” without necessarily changing anything.
+- Internal vs. External Validity
+    - Internal validity: confidence that a study accurately measures the causal effect in the specific setting of the study (e.g., randomization done well, no hidden biases).
+    - External validity: how well the study’s findings generalize to a different or broader context (e.g., real-world hospital population vs. a narrow trial population).
+- Workflow to Answer Causal Questions
+    1. Check existing evidence: look at previous research or similar experiments that might already answer your question.
+    2. Evaluate study relevance: assess whether existing studies are both done well (internal validity) and apply to your stakeholder’s setting (external validity).
+    3. Plan new study if needed, choosing between:
+        - Experimental (RCTs, A/B tests): often stronger internal validity, but might be in artificial settings or small user groups.
+        - Observational: uses real-world data where treatments aren’t assigned by the researcher, possibly stronger external validity but can be harder to ensure internal validity.
+- Key Takeaway
+    - Causal inference is challenging: partly conceptual (we can’t observe both “treatment” and “no treatment” simultaneously) and partly practical (decision-makers want answers before committing).
+    - Both experiments and observational data can yield valid causal insights if assumptions are checked.
+
+### 14.1 Answering causal Qs
+- Causality via Counterfactuals
+    - The course adopts the Neyman-Rubin Counterfactual Model, which says that “X causes Y” if Y would happen when X occurs and would not happen if X did not occur.
+    - Practically, this means comparing two imaginary worlds—one where the treatment/action happens (X=1) and one where it does not (X=0)—but we can only ever observe one of these worlds at a time.
+- Fundamental Problem of Causal Inference
+    - We can never fully measure both the treatment and no-treatment outcomes for the same individual at the same time.
+    - All causal inference methods revolve around approximating this unobservable “counterfactual” scenario in some way (e.g., randomized experiments, comparing pre/post treatment data, or observational data with careful assumptions).
+- Distinction from Passive Prediction
+    - Passive prediction cares about correlations that often persist over time (e.g., a “Check Engine” light correlates with future breakdown).
+    - Causal questions ask what would happen if we changed something about the world (e.g., does removing a “Check Engine” light prevent breakdowns?).
+    - Merely identifying a correlation is insufficient for determining outcomes under a new action or policy.
+- Randomized Experiments
+    - A common tool for approximating the counterfactual by randomly assigning who receives treatment vs. control.
+    - Despite their advantages, they still rely on assumptions (true randomness, large sample sizes, representativeness) and may have limited external validity.
+- Why Correlation ≠ Causation
+    - The “Check Engine” example shows how correlated indicators (lights on/off) don’t necessarily cause the underlying problem; cutting the light wire won’t fix the engine.
+    - Confounders (hidden differences between treated and untreated groups) can make raw comparisons misleading unless carefully addressed.
+- Imperfect but Essential
+    - Like detectives, data scientists gather evidence and make inferences about what probably happens under treatment.
+    - we can never observe both potential outcomes for the same individual simultaneously but can apply systematic methods (randomized trials, matching methods, etc.) to approximate the missing scenario and reason about how valid our assumptions might be.
+
+
 
 ## 2025//2/6 Lecture
 - data science is about solving problems
