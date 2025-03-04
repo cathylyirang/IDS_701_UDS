@@ -225,6 +225,24 @@
     - Like detectives, data scientists gather evidence and make inferences about what probably happens under treatment.
     - we can never observe both potential outcomes for the same individual simultaneously but can apply systematic methods (randomized trials, matching methods, etc.) to approximate the missing scenario and reason about how valid our assumptions might be.
 
+## Causal Questions: Potential Outcomes
+### Potential Outcomes Framework
+- Potential Outcomes Framework
+    - Each individual has two potential outcomes: one if they receive the treatment (T=1) and one if they do not (T=0). You can only ever observe one of these outcomes in the real world, which is why causal effects can’t be measured directly on a single person.
+- Average Treatment Effect (ATE)
+    - The ATE is the mean difference between the potential outcomes for an entire population – effectively, “if everyone got the treatment vs. if no one got it.”
+- Correlation vs. Causation
+    - The observed difference in outcomes between those who actually receive treatment and those who do not is not automatically the ATE. When certain assumptions hold, the observed difference can estimate a causal effect, but these assumptions (like “no baseline differences” and “no differential response by subgroups”) are often hard to confirm.
+- Baseline Differences and ATT
+    - If treated and untreated groups differ in ways unrelated to the treatment (e.g., healthier people choose treatment), we have “baseline differences.” Then the observed difference captures both the treatment effect and whatever underlying differences exist between the groups.
+    - Even if there are no baseline differences, the observed difference only directly measures the “Average Treatment Effect on the Treated” (ATT), not necessarily the population’s full ATE.
+- Why It’s Hard
+    - Key assumptions (no baseline differences, no differential responses) typically aren’t directly testable because they involve comparing hypothetical outcomes we don’t observe. Hence, domain knowledge and careful study design are essential for claiming true causality.
+
+
+
+
+
 
 
 ## 2025//2/6 Lecture
