@@ -299,3 +299,46 @@
 - $\widehat{ATE} = -5 = 25-30 $ 
 - $ATT = (4)-(3) = 5$
 
+## 2025/03/04 Lecture
+- Randomized controlled trial (RCT) == A/B test
+
+- Given
+
+|        | Tylenol | Pain | D |
+|--------|---------|------|---|
+|Fan     |   yes   |   5  | 0 |
+| Cindy  | yes     |   5  | 0 |
+| Nzarama| no      |   7  | 1 |
+| Eric   | no      |   9  | 1 |
+
+
+
+- Find numeric value of
+    - $E(Y^1|D=1)$ = 
+    - $E(Y^0|D=0)$
+    - $E(Y^1|D=0)$
+    - $E(Y^0|D=1)$
+    - in box math, what would no baseline difference mean : for T=1 (D=1)-(D=0)=0
+    - tell me a story for why we might see baseline differences?
+
+- Notation
+    -   T = treatment
+        T = 0 = no action
+        T = 1 = action
+    -   D = observation
+        D = 0 = not observed
+        D = 1 = observed
+    -   Y = Expected result
+        - $E(Y^1|D=1)$ = treated with observed outcome
+        - $E(Y^0|D=0)$ = not treated with no outcome
+        - $E(Y^1|D=0)$ = n
+        - $E(Y^0|D=1)$
+    - No baseline difference
+        - result varies with no action
+    - No differential treatment effects
+        - result is the same with or without action
+
+|      | T=0 | T=1 | D |
+|------|-----|-----|---|
+| D=0  |     |   5 | 0 |
+| D=1  |     |     |   |

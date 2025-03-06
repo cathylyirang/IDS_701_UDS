@@ -7589,7 +7589,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># import all packages</span>
@@ -7602,6 +7602,7 @@ a.anchor-link {
 <span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">GradientBoostingClassifier</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_auc_score</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 
 <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s2">"ignore"</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
@@ -7642,7 +7643,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">col_mortgage</span> <span class="o">=</span> <span class="p">[</span>
@@ -7682,8 +7683,9 @@ a.anchor-link {
 
 
 <span class="n">db_mortage</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
-    <span class="s2">"https://github.com/nickeubank/MIDS_Data/raw/refs/heads/master/mortgages/2004/sample_orig_2004_standard_mortgages.txt.zip"</span><span class="p">,</span>
-    <span class="n">compression</span><span class="o">=</span><span class="s1">'zip'</span><span class="p">,</span>
+    <span class="s2">"https://github.com/nickeubank/MIDS_Data/raw/refs/heads/master/"</span>
+    <span class="s2">"mortgages/2004/sample_orig_2004_standard_mortgages.txt.zip"</span><span class="p">,</span>
+    <span class="n">compression</span><span class="o">=</span><span class="s2">"zip"</span><span class="p">,</span>
     <span class="n">sep</span><span class="o">=</span><span class="s2">"|"</span><span class="p">,</span>
     <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">names</span><span class="o">=</span><span class="n">col_mortgage</span><span class="p">,</span>
@@ -7708,7 +7710,7 @@ a.anchor-link {
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[31]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7813,7 +7815,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">col_servicing</span> <span class="o">=</span> <span class="p">[</span>
@@ -7852,7 +7854,8 @@ a.anchor-link {
 <span class="p">]</span>
 
 <span class="n">db_servicing</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
-    <span class="s2">"https://github.com/nickeubank/MIDS_Data/raw/refs/heads/master/mortgages/2004/sample_svcg_2004_threeyears_standard_mortgages.txt.zip"</span><span class="p">,</span>
+    <span class="s2">"https://github.com/nickeubank/MIDS_Data/raw/refs/heads/master/"</span>
+    <span class="s2">"mortgages/2004/sample_svcg_2004_threeyears_standard_mortgages.txt.zip"</span><span class="p">,</span>
     <span class="n">sep</span><span class="o">=</span><span class="s2">"|"</span><span class="p">,</span>
     <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">names</span><span class="o">=</span><span class="n">col_servicing</span><span class="p">,</span>
@@ -7882,7 +7885,7 @@ a.anchor-link {
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[32]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8027,7 +8030,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">db_m</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
@@ -8057,7 +8060,7 @@ a.anchor-link {
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>_merge
 both          379461
@@ -8073,7 +8076,7 @@ Name: count, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">results</span><span class="p">[</span><span class="s2">"ex2_merge_type"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"1:m"</span>
@@ -8122,11 +8125,12 @@ If a loan has been acquired by REO, then the Current Loan Delinquency Status wil
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">db_m</span><span class="p">[</span><span class="s2">"Indicator"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">db_m</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"Loan Sequence Number"</span><span class="p">)[</span><span class="s2">"Current Loan Delinquency Status"</span><span class="p">]</span>
+    <span class="n">db_m</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"Loan Sequence Number"</span><span class="p">)[</span>
+        <span class="s2">"Current Loan Delinquency Status"</span><span class="p">]</span>
     <span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="s2">"0"</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">())</span>
     <span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 <span class="p">)</span>
@@ -8141,7 +8145,7 @@ If a loan has been acquired by REO, then the Current Loan Delinquency Status wil
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8186,17 +8190,17 @@ If a loan has been acquired by REO, then the Current Loan Delinquency Status wil
 </thead>
 <tbody>
 <tr>
-<th>300812</th>
-<td>753</td>
-<td>200412</td>
-<td>Y</td>
-<td>203411</td>
-<td>45300.0</td>
-<td>0</td>
+<th>349160</th>
+<td>651</td>
+<td>200502</td>
+<td>N</td>
+<td>202001</td>
+<td>NaN</td>
+<td>25</td>
 <td>1</td>
 <td>P</td>
-<td>78</td>
-<td>25</td>
+<td>95</td>
+<td>40</td>
 <td>...</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -8205,22 +8209,22 @@ If a loan has been acquired by REO, then the Current Loan Delinquency Status wil
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>108962.17</td>
+<td>113863.54</td>
 <td>both</td>
 <td>0</td>
 </tr>
 <tr>
-<th>244799</th>
-<td>768</td>
-<td>200410</td>
+<th>49160</th>
+<td>647</td>
+<td>200405</td>
 <td>Y</td>
-<td>203409</td>
-<td>40900.0</td>
+<td>201904</td>
+<td>NaN</td>
 <td>0</td>
 <td>1</td>
 <td>P</td>
-<td>79</td>
-<td>35</td>
+<td>80</td>
+<td>37</td>
 <td>...</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -8229,7 +8233,7 @@ If a loan has been acquired by REO, then the Current Loan Delinquency Status wil
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>330644.39</td>
+<td>98000.00</td>
 <td>both</td>
 <td>0</td>
 </tr>
@@ -8258,16 +8262,16 @@ If a loan has been acquired by REO, then the Current Loan Delinquency Status wil
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># remove duplicate rows</span>
 
 <span class="n">db_m_filtered</span> <span class="o">=</span> <span class="n">db_m</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s2">"Loan Sequence Number"</span><span class="p">)</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">db_m_filtered</span><span class="p">)</span>
-<span class="n">ex5_share_delinquent</span> <span class="o">=</span> <span class="n">db_m_filtered</span><span class="p">[</span><span class="n">db_m_filtered</span><span class="p">[</span><span class="s2">"Indicator"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span>
-    <span class="n">db_m_filtered</span>
-<span class="p">)</span>
+<span class="n">ex5_share_delinquent</span> <span class="o">=</span> <span class="n">db_m_filtered</span><span class="p">[</span>
+    <span class="n">db_m_filtered</span><span class="p">[</span><span class="s2">"Indicator"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">db_m_filtered</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8278,7 +8282,7 @@ If a loan has been acquired by REO, then the Current Loan Delinquency Status wil
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># drop all servicing variables reported on a monthly basis</span>
@@ -8317,7 +8321,7 @@ If a loan has been acquired by REO, then the Current Loan Delinquency Status wil
     <span class="s2">"Borrower Assistance Status Code"</span><span class="p">,</span>
     <span class="s2">"Current Month Modification Cost"</span><span class="p">,</span>
     <span class="s2">"Interest Bearing UPB"</span><span class="p">,</span>
-    <span class="s2">"_merge"</span>
+    <span class="s2">"_merge"</span><span class="p">,</span>
 <span class="p">]</span>
 
 
@@ -8333,7 +8337,7 @@ If a loan has been acquired by REO, then the Current Loan Delinquency Status wil
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[37]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>(17471, 33)</pre>
 </div>
@@ -8345,19 +8349,22 @@ If a loan has been acquired by REO, then the Current Loan Delinquency Status wil
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">ex5_num_mortgages</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">db_m_filtered</span><span class="p">)</span>
 <span class="n">results</span><span class="p">[</span><span class="s2">"ex5_num_mortgages"</span><span class="p">]</span> <span class="o">=</span> <span class="n">ex5_num_mortgages</span>
-<span class="n">results</span><span class="p">[</span><span class="s2">"ex5_share_delinquent"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">ex5_share_delinquent</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">results</span><span class="p">[</span><span class="s2">"ex5_share_delinquent"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">ex5_share_delinquent</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span>
-    <span class="sa">f</span><span class="s2">"After eliminating all repeated mortgage rows based on the Loan Sequence Number, the number of remaining observations in the dataset is: </span><span class="si">{</span><span class="n">ex7_num_mortgages</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">"</span>
+    <span class="sa">f</span><span class="s2">"After eliminating all repeated mortgage rows based on the</span>
+    <span class="n">Loan</span> <span class="n">Sequence</span> <span class="n">Number</span><span class="p">,</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">remaining</span> <span class="n">observations</span> <span class="ow">in</span>
+    <span class="n">the</span> <span class="n">dataset</span> <span class="ow">is</span><span class="p">:</span> <span class="p">{</span><span class="n">ex5_num_mortgages</span><span class="p">:,}</span><span class="o">.</span><span class="s2">"</span>
 <span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span>
-    <span class="sa">f</span><span class="s2">"The share of mortgages that have been delinquent is </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">ex5_share_delinquent</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">"</span>
+    <span class="sa">f</span><span class="s2">"The share of mortgages that have been delinquent is</span>
+    <span class="p">{</span><span class="nb">round</span><span class="p">(</span><span class="n">ex5_share_delinquent</span><span class="p">,</span><span class="mi">3</span><span class="p">):,}</span><span class="o">.</span><span class="s2">"</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -8371,10 +8378,26 @@ If a loan has been acquired by REO, then the Current Loan Delinquency Status wil
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>After eliminating all repeated mortgage rows based on the Loan Sequence Number, the number of remaining observations in the dataset is: 17,471
-The share of mortgages that have been delinquent is 0.071
+<pre>After eliminating all repeated mortgage rows based on the Loan Sequence Number, the number of remaining observations in the dataset is: 17,471.
+The share of mortgages that have been delinquent is 0.071.
 </pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<blockquote>
+<ul>
+<li>After eliminating all repeated mortgage rows based on the Loan Sequence Number, the number of remaining observations in the dataset is: 17,471.</li>
+<li>The share of mortgages that have been delinquent is 0.071.</li>
+</ul>
+</blockquote>
 </div>
 </div>
 </div>
@@ -8424,7 +8447,7 @@ Interest Only (I/O) Indicator
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">db_model</span> <span class="o">=</span> <span class="n">db_m_filtered</span><span class="p">[</span>
@@ -8461,7 +8484,7 @@ Interest Only (I/O) Indicator
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8504,48 +8527,48 @@ Interest Only (I/O) Indicator
 </thead>
 <tbody>
 <tr>
-<th>263533</th>
-<td>F04Q30300896</td>
-<td>675</td>
-<td>N</td>
+<th>228922</th>
+<td>F04Q30210422</td>
+<td>775</td>
+<td>Y</td>
 <td>1</td>
 <td>0</td>
 <td>P</td>
-<td>52</td>
-<td>284000</td>
+<td>27</td>
+<td>69000</td>
 <td>80</td>
 <td>5.875</td>
-<td>T</td>
+<td>R</td>
 <td>N</td>
 <td>FRM</td>
-<td>FL</td>
-<td>PU</td>
-<td>360</td>
-<td>2</td>
-<td>N</td>
-<td>0</td>
-</tr>
-<tr>
-<th>342205</th>
-<td>F04Q40240242</td>
-<td>716</td>
-<td>N</td>
-<td>1</td>
-<td>25</td>
-<td>S</td>
-<td>59</td>
-<td>139000</td>
-<td>90</td>
-<td>5.750</td>
-<td>T</td>
-<td>N</td>
-<td>FRM</td>
-<td>AZ</td>
+<td>NE</td>
 <td>SF</td>
 <td>360</td>
 <td>1</td>
 <td>N</td>
 <td>0</td>
+</tr>
+<tr>
+<th>228270</th>
+<td>F04Q30209351</td>
+<td>616</td>
+<td>N</td>
+<td>1</td>
+<td>30</td>
+<td>P</td>
+<td>45</td>
+<td>62000</td>
+<td>95</td>
+<td>6.250</td>
+<td>R</td>
+<td>N</td>
+<td>FRM</td>
+<td>PA</td>
+<td>SF</td>
+<td>360</td>
+<td>1</td>
+<td>N</td>
+<td>1</td>
 </tr>
 </tbody>
 </table>
@@ -8559,19 +8582,32 @@ Interest Only (I/O) Indicator
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">db_model</span><span class="p">[</span><span class="s2">"Credit Score"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_model</span><span class="p">[</span><span class="s2">"Credit Score"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">9999</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
-<span class="n">db_model</span><span class="p">[</span><span class="s2">"First Time Homebuyer Flag"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_model</span><span class="p">[</span><span class="s2">"First Time Homebuyer Flag"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"9"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
-<span class="n">db_model</span><span class="p">[</span><span class="s2">"Mortgage Insurance Percentage (MI %)"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_model</span><span class="p">[</span><span class="s2">"Mortgage Insurance Percentage (MI %)"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">999</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
-<span class="n">db_model</span><span class="p">[</span><span class="s2">"Number of Units"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_model</span><span class="p">[</span><span class="s2">"Number of Units"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">99</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
-<span class="n">db_model</span><span class="p">[</span><span class="s2">"Occupancy Status"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_model</span><span class="p">[</span><span class="s2">"Occupancy Status"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"9"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
-<span class="n">db_model</span><span class="p">[</span><span class="s2">"Original Debt-to-Income (DTI) Ratio"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_model</span><span class="p">[</span><span class="s2">"Original Debt-to-Income (DTI) Ratio"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">999</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
-<span class="n">db_model</span><span class="p">[</span><span class="s2">"Original Loan-to-Value (LTV)"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_model</span><span class="p">[</span><span class="s2">"Original Loan-to-Value (LTV)"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">999</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">db_model</span><span class="p">[</span><span class="s2">"First Time Homebuyer Flag"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_model</span><span class="p">[</span>
+    <span class="s2">"First Time Homebuyer Flag"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+    <span class="s2">"9"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="p">)</span>
+<span class="n">db_model</span><span class="p">[</span><span class="s2">"Mortgage Insurance Percentage (MI %)"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_model</span><span class="p">[</span>
+    <span class="s2">"Mortgage Insurance Percentage (MI %)"</span>
+<span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">999</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">db_model</span><span class="p">[</span><span class="s2">"Number of Units"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_model</span><span class="p">[</span><span class="s2">"Number of Units"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+    <span class="mi">99</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">db_model</span><span class="p">[</span><span class="s2">"Occupancy Status"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_model</span><span class="p">[</span><span class="s2">"Occupancy Status"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+    <span class="s2">"9"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">db_model</span><span class="p">[</span><span class="s2">"Original Debt-to-Income (DTI) Ratio"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_model</span><span class="p">[</span>
+    <span class="s2">"Original Debt-to-Income (DTI) Ratio"</span>
+<span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">999</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">db_model</span><span class="p">[</span><span class="s2">"Original Loan-to-Value (LTV)"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_model</span><span class="p">[</span>
+    <span class="s2">"Original Loan-to-Value (LTV)"</span>
+<span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">999</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
 <span class="n">db_model</span><span class="p">[</span><span class="s2">"Channel"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_model</span><span class="p">[</span><span class="s2">"Channel"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"9"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
-<span class="n">db_model</span><span class="p">[</span><span class="s2">"Property Type"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_model</span><span class="p">[</span><span class="s2">"Property Type"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"99"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
-<span class="n">db_model</span><span class="p">[</span><span class="s2">"Number of Borrowers"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_model</span><span class="p">[</span><span class="s2">"Number of Borrowers"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">99</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">db_model</span><span class="p">[</span><span class="s2">"Property Type"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_model</span><span class="p">[</span><span class="s2">"Property Type"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+    <span class="s2">"99"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">db_model</span><span class="p">[</span><span class="s2">"Number of Borrowers"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_model</span><span class="p">[</span><span class="s2">"Number of Borrowers"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+    <span class="mi">99</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8618,7 +8654,7 @@ Interest Only (I/O) Indicator
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">db_model</span> <span class="o">=</span> <span class="n">db_model</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">"Loan Sequence Number"</span><span class="p">)</span>
@@ -8640,15 +8676,17 @@ Interest Only (I/O) Indicator
     <span class="s1">'C(Q("Property Type")) + '</span>
     <span class="s1">'Q("Original Loan Term") +'</span>
     <span class="s1">'C(Q("Number of Borrowers")) + '</span>
-    <span class="s1">'C(Q("Interest Only (I/O) Indicator")) - 1'</span>
+    <span class="s1">'C(Q("Interest Only (I/O) Indicator"))'</span>
 <span class="p">)</span>
 
 <span class="n">y</span><span class="p">,</span> <span class="n">X</span> <span class="o">=</span> <span class="n">dmatrices</span><span class="p">(</span><span class="n">formula</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">db_model</span><span class="p">,</span> <span class="n">return_type</span><span class="o">=</span><span class="s2">"dataframe"</span><span class="p">)</span>
 
-<span class="n">ex7_num_obs</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">results</span><span class="p">[</span><span class="s2">"ex10_num_obs"</span><span class="p">]</span> <span class="o">=</span> <span class="n">ex7_num_obs</span>
+<span class="n">ex7_num_obs</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">results</span><span class="p">[</span><span class="s2">"ex7_num_obs"</span><span class="p">]</span> <span class="o">=</span> <span class="n">ex7_num_obs</span>
 <span class="nb">print</span><span class="p">(</span>
-    <span class="sa">f</span><span class="s2">"After performing our one hot encoding and removing null elements, the number of observations in the dataset is </span><span class="si">{</span><span class="n">ex7_num_obs</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">"</span>
+    <span class="sa">f</span><span class="s2">"After performing our one hot encoding and removing null</span>
+    <span class="n">elements</span><span class="p">,</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">observations</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">dataset</span> <span class="ow">is</span>
+    <span class="p">{</span><span class="n">ex7_num_obs</span><span class="p">:,}</span><span class="o">.</span><span class="s2">"</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -8662,9 +8700,22 @@ Interest Only (I/O) Indicator
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>After performing our one hot encoding and removing null elements, the number of observations in the dataset is 17,052
+<pre>After performing our one hot encoding and removing null elements, the number of observations in the dataset is 76.
 </pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<blockquote>
+<p>After performing our one hot encoding and removing null elements, the number of observations in the dataset is 17,052.</p>
+</blockquote>
 </div>
 </div>
 </div>
@@ -8685,7 +8736,7 @@ Interest Only (I/O) Indicator
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [42]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
@@ -8712,7 +8763,7 @@ Interest Only (I/O) Indicator
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [43]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">gbc</span> <span class="o">=</span> <span class="n">GradientBoostingClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
@@ -8727,9 +8778,9 @@ Interest Only (I/O) Indicator
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[43]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<style>#sk-container-id-1 {
+<style>#sk-container-id-2 {
   /* Definition of color scheme common for light and dark mode */
   --sklearn-color-text: black;
   --sklearn-color-line: gray;
@@ -8759,15 +8810,15 @@ Interest Only (I/O) Indicator
   }
 }
 
-#sk-container-id-1 {
+#sk-container-id-2 {
   color: var(--sklearn-color-text);
 }
 
-#sk-container-id-1 pre {
+#sk-container-id-2 pre {
   padding: 0;
 }
 
-#sk-container-id-1 input.sk-hidden--visually {
+#sk-container-id-2 input.sk-hidden--visually {
   border: 0;
   clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px);
@@ -8779,7 +8830,7 @@ Interest Only (I/O) Indicator
   width: 1px;
 }
 
-#sk-container-id-1 div.sk-dashed-wrapped {
+#sk-container-id-2 div.sk-dashed-wrapped {
   border: 1px dashed var(--sklearn-color-line);
   margin: 0 0.4em 0.5em 0.4em;
   box-sizing: border-box;
@@ -8787,7 +8838,7 @@ Interest Only (I/O) Indicator
   background-color: var(--sklearn-color-background);
 }
 
-#sk-container-id-1 div.sk-container {
+#sk-container-id-2 div.sk-container {
   /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
      but bootstrap.min.css set `[hidden] { display: none !important; }`
      so we also need the `!important` here to be able to override the
@@ -8797,7 +8848,7 @@ Interest Only (I/O) Indicator
   position: relative;
 }
 
-#sk-container-id-1 div.sk-text-repr-fallback {
+#sk-container-id-2 div.sk-text-repr-fallback {
   display: none;
 }
 
@@ -8813,14 +8864,14 @@ div.sk-item {
 
 /* Parallel-specific style estimator block */
 
-#sk-container-id-1 div.sk-parallel-item::after {
+#sk-container-id-2 div.sk-parallel-item::after {
   content: "";
   width: 100%;
   border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
   flex-grow: 1;
 }
 
-#sk-container-id-1 div.sk-parallel {
+#sk-container-id-2 div.sk-parallel {
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -8828,28 +8879,28 @@ div.sk-item {
   position: relative;
 }
 
-#sk-container-id-1 div.sk-parallel-item {
+#sk-container-id-2 div.sk-parallel-item {
   display: flex;
   flex-direction: column;
 }
 
-#sk-container-id-1 div.sk-parallel-item:first-child::after {
+#sk-container-id-2 div.sk-parallel-item:first-child::after {
   align-self: flex-end;
   width: 50%;
 }
 
-#sk-container-id-1 div.sk-parallel-item:last-child::after {
+#sk-container-id-2 div.sk-parallel-item:last-child::after {
   align-self: flex-start;
   width: 50%;
 }
 
-#sk-container-id-1 div.sk-parallel-item:only-child::after {
+#sk-container-id-2 div.sk-parallel-item:only-child::after {
   width: 0;
 }
 
 /* Serial-specific style estimator block */
 
-#sk-container-id-1 div.sk-serial {
+#sk-container-id-2 div.sk-serial {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8867,14 +8918,14 @@ clickable and can be expanded/collapsed.
 
 /* Pipeline and ColumnTransformer style (default) */
 
-#sk-container-id-1 div.sk-toggleable {
+#sk-container-id-2 div.sk-toggleable {
   /* Default theme specific background. It is overwritten whether we have a
   specific estimator or a Pipeline/ColumnTransformer */
   background-color: var(--sklearn-color-background);
 }
 
 /* Toggleable label */
-#sk-container-id-1 label.sk-toggleable__label {
+#sk-container-id-2 label.sk-toggleable__label {
   cursor: pointer;
   display: block;
   width: 100%;
@@ -8884,7 +8935,7 @@ clickable and can be expanded/collapsed.
   text-align: center;
 }
 
-#sk-container-id-1 label.sk-toggleable__label-arrow:before {
+#sk-container-id-2 label.sk-toggleable__label-arrow:before {
   /* Arrow on the left of the label */
   content: "▸";
   float: left;
@@ -8892,13 +8943,13 @@ clickable and can be expanded/collapsed.
   color: var(--sklearn-color-icon);
 }
 
-#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {
+#sk-container-id-2 label.sk-toggleable__label-arrow:hover:before {
   color: var(--sklearn-color-text);
 }
 
 /* Toggleable content - dropdown */
 
-#sk-container-id-1 div.sk-toggleable__content {
+#sk-container-id-2 div.sk-toggleable__content {
   max-height: 0;
   max-width: 0;
   overflow: hidden;
@@ -8907,12 +8958,12 @@ clickable and can be expanded/collapsed.
   background-color: var(--sklearn-color-unfitted-level-0);
 }
 
-#sk-container-id-1 div.sk-toggleable__content.fitted {
+#sk-container-id-2 div.sk-toggleable__content.fitted {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-0);
 }
 
-#sk-container-id-1 div.sk-toggleable__content pre {
+#sk-container-id-2 div.sk-toggleable__content pre {
   margin: 0.2em;
   border-radius: 0.25em;
   color: var(--sklearn-color-text);
@@ -8920,79 +8971,79 @@ clickable and can be expanded/collapsed.
   background-color: var(--sklearn-color-unfitted-level-0);
 }
 
-#sk-container-id-1 div.sk-toggleable__content.fitted pre {
+#sk-container-id-2 div.sk-toggleable__content.fitted pre {
   /* unfitted */
   background-color: var(--sklearn-color-fitted-level-0);
 }
 
-#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+#sk-container-id-2 input.sk-toggleable__control:checked~div.sk-toggleable__content {
   /* Expand drop-down */
   max-height: 200px;
   max-width: 100%;
   overflow: auto;
 }
 
-#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+#sk-container-id-2 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
   content: "▾";
 }
 
 /* Pipeline/ColumnTransformer-specific style */
 
-#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+#sk-container-id-2 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
   color: var(--sklearn-color-text);
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
-#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+#sk-container-id-2 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
   background-color: var(--sklearn-color-fitted-level-2);
 }
 
 /* Estimator-specific style */
 
 /* Colorize estimator box */
-#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+#sk-container-id-2 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
-#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+#sk-container-id-2 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-2);
 }
 
-#sk-container-id-1 div.sk-label label.sk-toggleable__label,
-#sk-container-id-1 div.sk-label label {
+#sk-container-id-2 div.sk-label label.sk-toggleable__label,
+#sk-container-id-2 div.sk-label label {
   /* The background is the default theme color */
   color: var(--sklearn-color-text-on-default-background);
 }
 
 /* On hover, darken the color of the background */
-#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {
+#sk-container-id-2 div.sk-label:hover label.sk-toggleable__label {
   color: var(--sklearn-color-text);
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
 /* Label box, darken color on hover, fitted */
-#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+#sk-container-id-2 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
   color: var(--sklearn-color-text);
   background-color: var(--sklearn-color-fitted-level-2);
 }
 
 /* Estimator label */
 
-#sk-container-id-1 div.sk-label label {
+#sk-container-id-2 div.sk-label label {
   font-family: monospace;
   font-weight: bold;
   display: inline-block;
   line-height: 1.2em;
 }
 
-#sk-container-id-1 div.sk-label-container {
+#sk-container-id-2 div.sk-label-container {
   text-align: center;
 }
 
 /* Estimator-specific */
-#sk-container-id-1 div.sk-estimator {
+#sk-container-id-2 div.sk-estimator {
   font-family: monospace;
   border: 1px dotted var(--sklearn-color-border-box);
   border-radius: 0.25em;
@@ -9002,18 +9053,18 @@ clickable and can be expanded/collapsed.
   background-color: var(--sklearn-color-unfitted-level-0);
 }
 
-#sk-container-id-1 div.sk-estimator.fitted {
+#sk-container-id-2 div.sk-estimator.fitted {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-0);
 }
 
 /* on hover */
-#sk-container-id-1 div.sk-estimator:hover {
+#sk-container-id-2 div.sk-estimator:hover {
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
-#sk-container-id-1 div.sk-estimator.fitted:hover {
+#sk-container-id-2 div.sk-estimator.fitted:hover {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-2);
 }
@@ -9100,7 +9151,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 
 /* "?"-specific style due to the `<a>` HTML tag */
 
-#sk-container-id-1 a.estimator_doc_link {
+#sk-container-id-2 a.estimator_doc_link {
   float: right;
   font-size: 1rem;
   line-height: 1em;
@@ -9115,25 +9166,25 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   border: var(--sklearn-color-unfitted-level-1) 1pt solid;
 }
 
-#sk-container-id-1 a.estimator_doc_link.fitted {
+#sk-container-id-2 a.estimator_doc_link.fitted {
   /* fitted */
   border: var(--sklearn-color-fitted-level-1) 1pt solid;
   color: var(--sklearn-color-fitted-level-1);
 }
 
 /* On hover */
-#sk-container-id-1 a.estimator_doc_link:hover {
+#sk-container-id-2 a.estimator_doc_link:hover {
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-3);
   color: var(--sklearn-color-background);
   text-decoration: none;
 }
 
-#sk-container-id-1 a.estimator_doc_link.fitted:hover {
+#sk-container-id-2 a.estimator_doc_link.fitted:hover {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-3);
 }
-</style><div class="sk-top-container" id="sk-container-id-1"><div class="sk-text-repr-fallback"><pre>GradientBoostingClassifier(random_state=42)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br/>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input checked="" class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted" for="sk-estimator-id-1">  GradientBoostingClassifier<a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.5/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html" rel="noreferrer" target="_blank">?<span>Documentation for GradientBoostingClassifier</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>GradientBoostingClassifier(random_state=42)</pre></div> </div></div></div></div>
+</style><div class="sk-top-container" id="sk-container-id-2"><div class="sk-text-repr-fallback"><pre>GradientBoostingClassifier(random_state=42)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br/>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input checked="" class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted" for="sk-estimator-id-2">  GradientBoostingClassifier<a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.5/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html" rel="noreferrer" target="_blank">?<span>Documentation for GradientBoostingClassifier</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>GradientBoostingClassifier(random_state=42)</pre></div> </div></div></div></div>
 </div>
 </div>
 </div>
@@ -9155,7 +9206,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [44]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">y_hat</span> <span class="o">=</span> <span class="n">gbc</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
@@ -9171,7 +9222,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[44]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>array([[3146,    9],
        [ 252,    4]])</pre>
@@ -9184,7 +9235,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [45]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">db_model</span><span class="p">[</span><span class="s2">"Indicator"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
@@ -9198,12 +9249,27 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[45]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>Indicator
 0    16229
 1     1242
 Name: count, dtype: int64</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">share_pred_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_hat</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">results</span><span class="p">[</span><span class="s2">"ex10_predicted_delinquent"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">share_pred_1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </div>
@@ -9244,7 +9310,7 @@ Name: count, dtype: int64</pre>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9252,9 +9318,56 @@ Name: count, dtype: int64</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">delinquency_share</span> <span class="o">=</span> <span class="n">y_train</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">majority_share</span>   <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">delinquency_share</span>
+
+<span class="n">w_1</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">delinquency_share</span>
+<span class="n">w_0</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">majority_share</span>
+
+<span class="n">sample_weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">y_train</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="n">w_1</span><span class="p">,</span> <span class="n">w_0</span><span class="p">)</span>
+
+<span class="n">gbc</span> <span class="o">=</span> <span class="n">GradientBoostingClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">gbc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span>
+        <span class="n">sample_weight</span><span class="o">=</span><span class="n">sample_weights</span><span class="p">)</span>
+
+<span class="n">y_hat_weighted</span> <span class="o">=</span> <span class="n">gbc</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">frac_pred_delq_weighted</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_hat_weighted</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">results</span><span class="p">[</span><span class="s2">"ex11_share_delinquent_weighted"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span>
+    <span class="n">frac_pred_delq_weighted</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">"Share predicted to be delinquent (weighted model) ="</span><span class="p">,</span>
+    <span class="n">results</span><span class="p">[</span><span class="s2">"ex11_share_delinquent_weighted"</span><span class="p">]</span>
+<span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Share predicted to be delinquent (weighted model) = 0.298
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<blockquote>
+<p>The share of observations that are now predicted to be delinquent is 0.298.</p>
+</blockquote>
 </div>
 </div>
 </div>
@@ -9271,6 +9384,52 @@ Name: count, dtype: int64</pre>
 <p>(If you think in these terms, changing the sample weights we give the model will impact the orientation of the separating hyperplane the model creates to split the data; changing the classification threshold at which an observation is considered a <code>1</code> basically constitutes a simple shifting the hyperplane.)</p>
 <p>Using the results of our <code>GradientBoostingClassifier</code> fit with reciprocal sample weights, get the predicted probabilities for each observation in our test data.</p>
 <p>Plot the share of observations classified as delinquent against classification thresholds from 0 to 1.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [48]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">thresholds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+<span class="n">y_probs</span> <span class="o">=</span> <span class="n">gbc</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">y_pred_t</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_probs</span> <span class="o">&gt;=</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">share_delinquent_t</span> <span class="o">=</span> <span class="n">y_pred_t</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">share_del_t_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">thresholds</span><span class="p">:</span>
+    <span class="n">y_pred_t</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_probs</span> <span class="o">&gt;=</span> <span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">share_t</span> <span class="o">=</span> <span class="n">y_pred_t</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">share_del_t_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">share_t</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">thresholds</span><span class="p">,</span> <span class="n">share_del_t_list</span><span class="p">,</span> <span class="n">label</span>
+         <span class="o">=</span><span class="s1">'Delinquency Share by Threshold'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Threshold t'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Fraction Predicted Delinquent'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Delinquency Share vs. Threshold'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedImage jp-OutputArea-output" tabindex="0">
+<img alt="No description has been provided for this image" class="" src="data:image/png;base64,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"/>
+</div>
 </div>
 </div>
 </div>
@@ -9299,6 +9458,62 @@ Name: count, dtype: int64</pre>
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [49]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">prob_test</span> <span class="o">=</span> <span class="n">gbc</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="n">threshold_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">best_threshold</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">best_value</span> <span class="o">=</span> <span class="o">-</span><span class="mf">9999.0</span>
+<span class="n">best_threshold_raw</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">threshold_grid</span><span class="p">:</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="p">(</span><span class="n">prob_test</span> <span class="o">&gt;=</span> <span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    
+    <span class="n">tp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">y_test</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y_pred</span> <span class="o">==</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">tn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">y_test</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y_pred</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">fp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">y_test</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y_pred</span> <span class="o">==</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">fn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">y_test</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y_pred</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span>
+    
+    <span class="n">total_value</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span> <span class="o">*</span> <span class="n">tp</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">*</span> <span class="n">tn</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.05</span> <span class="o">*</span> <span class="n">fp</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="mf">20.0</span> <span class="o">*</span> <span class="n">fn</span><span class="p">)</span>
+    
+    <span class="n">avg_value</span> <span class="o">=</span> <span class="n">total_value</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_test</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">avg_value</span> <span class="o">&gt;</span> <span class="n">best_value</span><span class="p">:</span>
+        <span class="n">best_value</span> <span class="o">=</span> <span class="n">avg_value</span>
+        <span class="n">best_threshold_raw</span> <span class="o">=</span> <span class="n">t</span>
+
+<span class="n">rounded_t</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">best_threshold_raw</span> <span class="o">/</span> <span class="mf">0.05</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">results</span><span class="p">[</span><span class="s2">"ex13_optimal_threshold"</span><span class="p">]</span> <span class="o">=</span> <span class="n">rounded_t</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Raw best threshold ="</span><span class="p">,</span> <span class="n">best_threshold_raw</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Rounded to nearest 0.05 ="</span><span class="p">,</span> <span class="n">results</span><span class="p">[</span><span class="s2">"ex13_optimal_threshold"</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Raw best threshold = 0.35435435435435436
+Rounded to nearest 0.05 = 0.35
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -9307,6 +9522,46 @@ Name: count, dtype: int64</pre>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Exercise-14">Exercise 14<a class="anchor-link" href="#Exercise-14">¶</a></h3><p>What is the value your customer will get at that (rounded-to-nearest-half-tenth) threshold per mortgage available (i.e., assume a True Negative yields a value of 1, calculate the value generated by your test data at your rounded optimal threshold, then normalize by the number of observations in the test data). Store this normalized value in <code>ex14_normalized_value</code>. <strong>Round your answer to two decimal places.</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [50]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">chosen_threshold</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s2">"ex13_optimal_threshold"</span><span class="p">]</span>
+
+<span class="n">y_pred_final</span> <span class="o">=</span> <span class="p">(</span><span class="n">prob_test</span> <span class="o">&gt;=</span> <span class="n">chosen_threshold</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="n">tp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">y_test</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y_pred_final</span> <span class="o">==</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">tn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">y_test</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y_pred_final</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">y_test</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y_pred_final</span> <span class="o">==</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">y_test</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y_pred_final</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="n">total_value</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span> <span class="o">*</span> <span class="n">tp</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">*</span> <span class="n">tn</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.05</span> <span class="o">*</span> <span class="n">fp</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="mf">20.0</span> <span class="o">*</span> <span class="n">fn</span><span class="p">)</span>
+<span class="n">avg_value</span> <span class="o">=</span> <span class="n">total_value</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_test</span><span class="p">)</span>
+
+<span class="n">results</span><span class="p">[</span><span class="s2">"ex14_normalized_value"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">avg_value</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Value per mortgage at chosen threshold:"</span><span class="p">,</span> <span class="n">results</span><span class="p">[</span><span class="s2">"ex14_normalized_value"</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Value per mortgage at chosen threshold: 0.15
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -9375,6 +9630,780 @@ Name: count, dtype: int64</pre>
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Load 2007 origination</span>
+<span class="n">col_mortgage</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"Credit Score"</span><span class="p">,</span>
+    <span class="s2">"First Payment Date"</span><span class="p">,</span>
+    <span class="s2">"First Time Homebuyer Flag"</span><span class="p">,</span>
+    <span class="s2">"Maturity Date"</span><span class="p">,</span>
+    <span class="s2">"Metropolitan Statistical Area (MSA) Or Metropolitan Division"</span><span class="p">,</span>
+    <span class="s2">"Mortgage Insurance Percentage (MI %)"</span><span class="p">,</span>
+    <span class="s2">"Number of Units"</span><span class="p">,</span>
+    <span class="s2">"Occupancy Status"</span><span class="p">,</span>
+    <span class="s2">"Original Combined Loan-to-Value (CLTV)"</span><span class="p">,</span>
+    <span class="s2">"Original Debt-to-Income (DTI) Ratio"</span><span class="p">,</span>
+    <span class="s2">"Original UPB"</span><span class="p">,</span>
+    <span class="s2">"Original Loan-to-Value (LTV)"</span><span class="p">,</span>
+    <span class="s2">"Original Interest Rate"</span><span class="p">,</span>
+    <span class="s2">"Channel"</span><span class="p">,</span>
+    <span class="s2">"Prepayment Penalty Mortgage (PPM) Flag"</span><span class="p">,</span>
+    <span class="s2">"Amortization Type (Formerly Product Type)"</span><span class="p">,</span>
+    <span class="s2">"Property State"</span><span class="p">,</span>
+    <span class="s2">"Property Type"</span><span class="p">,</span>
+    <span class="s2">"Postal Code"</span><span class="p">,</span>
+    <span class="s2">"Loan Sequence Number"</span><span class="p">,</span>
+    <span class="s2">"Loan Purpose"</span><span class="p">,</span>
+    <span class="s2">"Original Loan Term"</span><span class="p">,</span>
+    <span class="s2">"Number of Borrowers"</span><span class="p">,</span>
+    <span class="s2">"Seller Name"</span><span class="p">,</span>
+    <span class="s2">"Servicer Name"</span><span class="p">,</span>
+    <span class="s2">"Super Conforming Flag"</span><span class="p">,</span>
+    <span class="s2">"Pre-HARP Loan Sequence Number"</span><span class="p">,</span>
+    <span class="s2">"Program Indicator"</span><span class="p">,</span>
+    <span class="s2">"HARP Indicator"</span><span class="p">,</span>
+    <span class="s2">"Property Valuation Method"</span><span class="p">,</span>
+    <span class="s2">"Interest Only (I/O) Indicator"</span><span class="p">,</span>
+    <span class="s2">"Mortgage Insurance Cancellation Indicator"</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">db_mort_2007</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="s2">"https://github.com/nickeubank/MIDS_Data/raw/refs/heads/master/"</span>
+    <span class="s2">"mortgages/2007/sample_orig_2007_standard_mortgages.txt.zip"</span><span class="p">,</span>
+    <span class="n">compression</span><span class="o">=</span><span class="s2">"zip"</span><span class="p">,</span>
+    <span class="n">sep</span><span class="o">=</span><span class="s2">"|"</span><span class="p">,</span>
+    <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">names</span><span class="o">=</span><span class="n">col_mortgage</span><span class="p">,</span>
+    <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">db_mort_2007</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">db_mort_2007</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>(22542, 32)
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Credit Score</th>
+<th>First Payment Date</th>
+<th>First Time Homebuyer Flag</th>
+<th>Maturity Date</th>
+<th>Metropolitan Statistical Area (MSA) Or Metropolitan Division</th>
+<th>Mortgage Insurance Percentage (MI %)</th>
+<th>Number of Units</th>
+<th>Occupancy Status</th>
+<th>Original Combined Loan-to-Value (CLTV)</th>
+<th>Original Debt-to-Income (DTI) Ratio</th>
+<th>...</th>
+<th>Number of Borrowers</th>
+<th>Seller Name</th>
+<th>Servicer Name</th>
+<th>Super Conforming Flag</th>
+<th>Pre-HARP Loan Sequence Number</th>
+<th>Program Indicator</th>
+<th>HARP Indicator</th>
+<th>Property Valuation Method</th>
+<th>Interest Only (I/O) Indicator</th>
+<th>Mortgage Insurance Cancellation Indicator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>769</td>
+<td>200702</td>
+<td>N</td>
+<td>203701</td>
+<td>24220.0</td>
+<td>0</td>
+<td>1</td>
+<td>P</td>
+<td>90</td>
+<td>38</td>
+<td>...</td>
+<td>2</td>
+<td>Other sellers</td>
+<td>Other servicers</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>9</td>
+<td>NaN</td>
+<td>9</td>
+<td>N</td>
+<td>9</td>
+</tr>
+<tr>
+<th>1</th>
+<td>598</td>
+<td>200703</td>
+<td>N</td>
+<td>203702</td>
+<td>NaN</td>
+<td>0</td>
+<td>1</td>
+<td>P</td>
+<td>90</td>
+<td>45</td>
+<td>...</td>
+<td>2</td>
+<td>Other sellers</td>
+<td>Other servicers</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>9</td>
+<td>NaN</td>
+<td>9</td>
+<td>N</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+<p>2 rows × 32 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Load 2007 servicing</span>
+<span class="n">col_servicing</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"Loan Sequence Number"</span><span class="p">,</span>
+    <span class="s2">"Monthly Reporting Period"</span><span class="p">,</span>
+    <span class="s2">"Current Actual UPB"</span><span class="p">,</span>
+    <span class="s2">"Current Loan Delinquency Status"</span><span class="p">,</span>
+    <span class="s2">"Loan Age"</span><span class="p">,</span>
+    <span class="s2">"Remaining Months to Legal Maturity"</span><span class="p">,</span>
+    <span class="s2">"Defect Settlement Date"</span><span class="p">,</span>
+    <span class="s2">"Modification Flag"</span><span class="p">,</span>
+    <span class="s2">"Zero Balance Code"</span><span class="p">,</span>
+    <span class="s2">"Zero Balance Effective Date"</span><span class="p">,</span>
+    <span class="s2">"Current Interest Rate"</span><span class="p">,</span>
+    <span class="s2">"Current Deferred UPB"</span><span class="p">,</span>
+    <span class="s2">"Due Date of Last Paid Installment (DDLPI)"</span><span class="p">,</span>
+    <span class="s2">"MI Recoveries"</span><span class="p">,</span>
+    <span class="s2">"Net Sales Proceeds"</span><span class="p">,</span>
+    <span class="s2">"Non MI Recoveries"</span><span class="p">,</span>
+    <span class="s2">"Expenses"</span><span class="p">,</span>
+    <span class="s2">"Legal Costs"</span><span class="p">,</span>
+    <span class="s2">"Maintenance and Preservation Costs"</span><span class="p">,</span>
+    <span class="s2">"Taxes and Insurance"</span><span class="p">,</span>
+    <span class="s2">"Miscellaneous Expenses"</span><span class="p">,</span>
+    <span class="s2">"Actual Loss Calculation"</span><span class="p">,</span>
+    <span class="s2">"Modification Cost"</span><span class="p">,</span>
+    <span class="s2">"Step Modification Flag"</span><span class="p">,</span>
+    <span class="s2">"Deferred Payment Plan"</span><span class="p">,</span>
+    <span class="s2">"Estimated Loan-to-Value (ELTV)"</span><span class="p">,</span>
+    <span class="s2">"Zero Balance Removal UPB"</span><span class="p">,</span>
+    <span class="s2">"Delinquent Accrued Interest"</span><span class="p">,</span>
+    <span class="s2">"Delinquency Due to Disaster"</span><span class="p">,</span>
+    <span class="s2">"Borrower Assistance Status Code"</span><span class="p">,</span>
+    <span class="s2">"Current Month Modification Cost"</span><span class="p">,</span>
+    <span class="s2">"Interest Bearing UPB"</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">db_svcg_2007</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="s2">"https://github.com/nickeubank/MIDS_Data/raw/refs/heads/master/"</span>
+    <span class="s2">"mortgages/2007/sample_svcg_2007_threeyears_standard_mortgages.txt.zip"</span><span class="p">,</span>
+    <span class="n">sep</span><span class="o">=</span><span class="s2">"|"</span><span class="p">,</span>
+    <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">names</span><span class="o">=</span><span class="n">col_servicing</span><span class="p">,</span>
+    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">"Current Loan Delinquency Status"</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="s2">"Modification Flag"</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="s2">"Step Modification Flag"</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">db_svcg_2007</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">db_svcg_2007</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>(481871, 32)
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Loan Sequence Number</th>
+<th>Monthly Reporting Period</th>
+<th>Current Actual UPB</th>
+<th>Current Loan Delinquency Status</th>
+<th>Loan Age</th>
+<th>Remaining Months to Legal Maturity</th>
+<th>Defect Settlement Date</th>
+<th>Modification Flag</th>
+<th>Zero Balance Code</th>
+<th>Zero Balance Effective Date</th>
+<th>...</th>
+<th>Modification Cost</th>
+<th>Step Modification Flag</th>
+<th>Deferred Payment Plan</th>
+<th>Estimated Loan-to-Value (ELTV)</th>
+<th>Zero Balance Removal UPB</th>
+<th>Delinquent Accrued Interest</th>
+<th>Delinquency Due to Disaster</th>
+<th>Borrower Assistance Status Code</th>
+<th>Current Month Modification Cost</th>
+<th>Interest Bearing UPB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>F07Q10000023</td>
+<td>200702</td>
+<td>195000.0</td>
+<td>0</td>
+<td>1</td>
+<td>359</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>195000.0</td>
+</tr>
+<tr>
+<th>1</th>
+<td>F07Q10000023</td>
+<td>200703</td>
+<td>195000.0</td>
+<td>0</td>
+<td>2</td>
+<td>358</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>195000.0</td>
+</tr>
+</tbody>
+</table>
+<p>2 rows × 32 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Merge (inner), create delinquency indicator.</span>
+<span class="n">db_2007</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+    <span class="n">db_mort_2007</span><span class="p">,</span>
+    <span class="n">db_svcg_2007</span><span class="p">,</span>
+    <span class="n">on</span><span class="o">=</span><span class="s2">"Loan Sequence Number"</span><span class="p">,</span>
+    <span class="n">how</span><span class="o">=</span><span class="s2">"inner"</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">db_2007</span><span class="p">[</span><span class="s2">"Indicator"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">db_2007</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"Loan Sequence Number"</span><span class="p">)[</span>
+        <span class="s2">"Current Loan Delinquency Status"</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="s2">"0"</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">())</span>
+    <span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">db_2007</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">db_2007</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>(481871, 64)
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Credit Score</th>
+<th>First Payment Date</th>
+<th>First Time Homebuyer Flag</th>
+<th>Maturity Date</th>
+<th>Metropolitan Statistical Area (MSA) Or Metropolitan Division</th>
+<th>Mortgage Insurance Percentage (MI %)</th>
+<th>Number of Units</th>
+<th>Occupancy Status</th>
+<th>Original Combined Loan-to-Value (CLTV)</th>
+<th>Original Debt-to-Income (DTI) Ratio</th>
+<th>...</th>
+<th>Step Modification Flag</th>
+<th>Deferred Payment Plan</th>
+<th>Estimated Loan-to-Value (ELTV)</th>
+<th>Zero Balance Removal UPB</th>
+<th>Delinquent Accrued Interest</th>
+<th>Delinquency Due to Disaster</th>
+<th>Borrower Assistance Status Code</th>
+<th>Current Month Modification Cost</th>
+<th>Interest Bearing UPB</th>
+<th>Indicator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>769</td>
+<td>200702</td>
+<td>N</td>
+<td>203701</td>
+<td>24220.0</td>
+<td>0</td>
+<td>1</td>
+<td>P</td>
+<td>90</td>
+<td>38</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>195000.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>1</th>
+<td>769</td>
+<td>200702</td>
+<td>N</td>
+<td>203701</td>
+<td>24220.0</td>
+<td>0</td>
+<td>1</td>
+<td>P</td>
+<td>90</td>
+<td>38</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>195000.0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>2 rows × 64 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [54]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Drop duplicates at the loan level, keep the same key columns</span>
+<span class="n">db_2007</span> <span class="o">=</span> <span class="n">db_2007</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s2">"Loan Sequence Number"</span><span class="p">)</span>
+<span class="n">db_2007</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[54]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>(22542, 64)</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">db_2007</span><span class="p">[</span><span class="s2">"Credit Score"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_2007</span><span class="p">[</span><span class="s2">"Credit Score"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">9999</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">db_2007</span><span class="p">[</span><span class="s2">"First Time Homebuyer Flag"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_2007</span><span class="p">[</span>
+    <span class="s2">"First Time Homebuyer Flag"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+    <span class="s2">"9"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="p">)</span>
+<span class="n">db_2007</span><span class="p">[</span><span class="s2">"Mortgage Insurance Percentage (MI %)"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_2007</span><span class="p">[</span>
+    <span class="s2">"Mortgage Insurance Percentage (MI %)"</span>
+<span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">999</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">db_2007</span><span class="p">[</span><span class="s2">"Number of Units"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_2007</span><span class="p">[</span><span class="s2">"Number of Units"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+    <span class="mi">99</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">db_2007</span><span class="p">[</span><span class="s2">"Occupancy Status"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_2007</span><span class="p">[</span><span class="s2">"Occupancy Status"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+    <span class="s2">"9"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">db_2007</span><span class="p">[</span><span class="s2">"Original Debt-to-Income (DTI) Ratio"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_2007</span><span class="p">[</span>
+    <span class="s2">"Original Debt-to-Income (DTI) Ratio"</span>
+<span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">999</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">db_2007</span><span class="p">[</span><span class="s2">"Original Loan-to-Value (LTV)"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_2007</span><span class="p">[</span>
+    <span class="s2">"Original Loan-to-Value (LTV)"</span>
+<span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">999</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">db_2007</span><span class="p">[</span><span class="s2">"Channel"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_2007</span><span class="p">[</span><span class="s2">"Channel"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"9"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">db_2007</span><span class="p">[</span><span class="s2">"Property Type"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_2007</span><span class="p">[</span><span class="s2">"Property Type"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+    <span class="s2">"99"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">db_2007</span><span class="p">[</span><span class="s2">"Number of Borrowers"</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_2007</span><span class="p">[</span><span class="s2">"Number of Borrowers"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+    <span class="mi">99</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [56]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">db_2007_model</span> <span class="o">=</span> <span class="n">db_2007</span><span class="p">[</span>
+    <span class="p">[</span>
+        <span class="s2">"Loan Sequence Number"</span><span class="p">,</span>
+        <span class="s2">"Credit Score"</span><span class="p">,</span>
+        <span class="s2">"First Time Homebuyer Flag"</span><span class="p">,</span>
+        <span class="s2">"Number of Units"</span><span class="p">,</span>
+        <span class="s2">"Mortgage Insurance Percentage (MI %)"</span><span class="p">,</span>
+        <span class="s2">"Occupancy Status"</span><span class="p">,</span>
+        <span class="s2">"Original Debt-to-Income (DTI) Ratio"</span><span class="p">,</span>
+        <span class="s2">"Original UPB"</span><span class="p">,</span>
+        <span class="s2">"Original Loan-to-Value (LTV)"</span><span class="p">,</span>
+        <span class="s2">"Original Interest Rate"</span><span class="p">,</span>
+        <span class="s2">"Channel"</span><span class="p">,</span>
+        <span class="s2">"Prepayment Penalty Mortgage (PPM) Flag"</span><span class="p">,</span>
+        <span class="s2">"Amortization Type (Formerly Product Type)"</span><span class="p">,</span>
+        <span class="s2">"Property State"</span><span class="p">,</span>
+        <span class="s2">"Property Type"</span><span class="p">,</span>
+        <span class="s2">"Original Loan Term"</span><span class="p">,</span>
+        <span class="s2">"Number of Borrowers"</span><span class="p">,</span>
+        <span class="s2">"Interest Only (I/O) Indicator"</span><span class="p">,</span>
+        <span class="s2">"Indicator"</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">db_2007_model</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">db_2007_model</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>(22542, 19)
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[56]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Loan Sequence Number</th>
+<th>Credit Score</th>
+<th>First Time Homebuyer Flag</th>
+<th>Number of Units</th>
+<th>Mortgage Insurance Percentage (MI %)</th>
+<th>Occupancy Status</th>
+<th>Original Debt-to-Income (DTI) Ratio</th>
+<th>Original UPB</th>
+<th>Original Loan-to-Value (LTV)</th>
+<th>Original Interest Rate</th>
+<th>Channel</th>
+<th>Prepayment Penalty Mortgage (PPM) Flag</th>
+<th>Amortization Type (Formerly Product Type)</th>
+<th>Property State</th>
+<th>Property Type</th>
+<th>Original Loan Term</th>
+<th>Number of Borrowers</th>
+<th>Interest Only (I/O) Indicator</th>
+<th>Indicator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>F07Q10000023</td>
+<td>769.0</td>
+<td>N</td>
+<td>1</td>
+<td>0</td>
+<td>P</td>
+<td>38.0</td>
+<td>195000</td>
+<td>80</td>
+<td>6.125</td>
+<td>R</td>
+<td>N</td>
+<td>FRM</td>
+<td>ND</td>
+<td>SF</td>
+<td>360</td>
+<td>2.0</td>
+<td>N</td>
+<td>0</td>
+</tr>
+<tr>
+<th>24</th>
+<td>F07Q10000059</td>
+<td>598.0</td>
+<td>N</td>
+<td>1</td>
+<td>0</td>
+<td>P</td>
+<td>45.0</td>
+<td>136000</td>
+<td>80</td>
+<td>6.000</td>
+<td>R</td>
+<td>N</td>
+<td>FRM</td>
+<td>ND</td>
+<td>SF</td>
+<td>360</td>
+<td>2.0</td>
+<td>N</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">db_2007_model</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">" "</span><span class="p">,</span> <span class="s2">"_"</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span>
+                         <span class="n">db_2007_model</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+<span class="n">db_2007_model</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">"[%/()\-]"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span>
+                         <span class="n">db_2007_model</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+
+<span class="c1"># same formula you used for 2004</span>
+<span class="c1"># (If you removed "-1" previously, be consistent here as well.)</span>
+<span class="n">formula_2007</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">Indicator ~ Credit_Score </span>
+<span class="s2">+ C(First_Time_Homebuyer_Flag)</span>
+<span class="s2">+ C(Number_of_Units)</span>
+<span class="s2">+ Mortgage_Insurance_Percentage_MI_</span>
+<span class="s2">+ C(Occupancy_Status)</span>
+<span class="s2">+ Original_DebttoIncome_DTI_Ratio</span>
+<span class="s2">+ Original_UPB</span>
+<span class="s2">+ Original_LoantoValue_LTV</span>
+<span class="s2">+ Original_Interest_Rate</span>
+<span class="s2">+ C(Channel)</span>
+<span class="s2">+ C(Prepayment_Penalty_Mortgage_PPM_Flag)</span>
+<span class="s2">+ C(Amortization_Type_Formerly_Product_Type)</span>
+<span class="s2">+ C(Property_State)</span>
+<span class="s2">+ C(Property_Type)</span>
+<span class="s2">+ Original_Loan_Term</span>
+<span class="s2">+ C(Number_of_Borrowers)</span>
+<span class="s2">+ C(Interest_Only_IO_Indicator)</span>
+<span class="s2">"""</span>  <span class="c1"># plus or minus the intercept part</span>
+
+<span class="n">y_2007</span><span class="p">,</span> <span class="n">X_2007</span> <span class="o">=</span> <span class="n">dmatrices</span><span class="p">(</span><span class="n">formula_2007</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">db_2007_model</span><span class="p">,</span>
+                           <span class="n">return_type</span><span class="o">=</span><span class="s2">"dataframe"</span><span class="p">)</span>
+
+<span class="c1"># 6) final number of observations:</span>
+<span class="n">results</span><span class="p">[</span><span class="s2">"ex15_num_obs"</span><span class="p">]</span> <span class="o">=</span> <span class="n">X_2007</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># 7) actual fraction delinquent</span>
+<span class="n">frac_del_2007</span> <span class="o">=</span> <span class="n">y_2007</span><span class="p">[</span><span class="s2">"Indicator"</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">results</span><span class="p">[</span><span class="s2">"ex15_share_delinquent"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">frac_del_2007</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"2007 final #obs:"</span><span class="p">,</span> <span class="n">results</span><span class="p">[</span><span class="s2">"ex15_num_obs"</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"2007 share delinquent:"</span><span class="p">,</span> <span class="n">results</span><span class="p">[</span><span class="s2">"ex15_share_delinquent"</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>&lt;&gt;:3: SyntaxWarning: invalid escape sequence '\-'
+&lt;&gt;:3: SyntaxWarning: invalid escape sequence '\-'
+/var/folders/cv/pb7bdsd97cq7qt_b65khbfvr0000gn/T/ipykernel_40882/404183648.py:3: SyntaxWarning: invalid escape sequence '\-'
+  db_2007_model.columns = [re.sub("[%/()\-]", "", c) for c in db_2007_model.columns]
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>2007 final #obs: 21972
+2007 share delinquent: 0.11
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -9401,6 +10430,136 @@ Name: count, dtype: int64</pre>
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">chosen_threshold_13</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s2">"ex13_optimal_threshold"</span><span class="p">]</span>
+<span class="n">prob_2007</span> <span class="o">=</span> <span class="n">gbc</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_2007</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="n">y_pred_2007</span> <span class="o">=</span> <span class="p">(</span><span class="n">prob_2007</span> <span class="o">&gt;=</span> <span class="n">chosen_threshold_13</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="n">y_true_2007</span> <span class="o">=</span> <span class="n">y_2007</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="n">tp_07</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">y_true_2007</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y_pred_2007</span> <span class="o">==</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">tn_07</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">y_true_2007</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y_pred_2007</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">fp_07</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">y_true_2007</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y_pred_2007</span> <span class="o">==</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">fn_07</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">y_true_2007</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y_pred_2007</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="n">total_value_2007</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span> <span class="o">*</span> <span class="n">tp_07</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">*</span> <span class="n">tn_07</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.05</span> <span class="o">*</span> <span class="n">fp_07</span><span class="p">)</span>
+<span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="mf">20.0</span> <span class="o">*</span> <span class="n">fn_07</span><span class="p">)</span>
+<span class="n">avg_value_2007</span>   <span class="o">=</span> <span class="n">total_value_2007</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_true_2007</span><span class="p">)</span>
+
+<span class="n">results</span><span class="p">[</span><span class="s2">"ex16_normalized_value_2007"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">avg_value_2007</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Compare to ex14_normalized_value from your 2004 test:</span>
+<span class="n">predicted_2004_value</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s2">"ex14_normalized_value"</span><span class="p">]</span>  <span class="c1"># (already stored, 2 decimals)</span>
+
+<span class="n">ratio_percent</span> <span class="o">=</span> <span class="mf">100.0</span> <span class="o">*</span> <span class="n">results</span><span class="p">[</span>
+    <span class="s2">"ex16_normalized_value_2007"</span><span class="p">]</span> <span class="o">/</span> <span class="n">predicted_2004_value</span>
+<span class="n">results</span><span class="p">[</span><span class="s2">"ex16_final_return_pct"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">ratio_percent</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Normalized value in 2007 data:"</span><span class="p">,</span> <span class="n">results</span><span class="p">[</span>
+    <span class="s2">"ex16_normalized_value_2007"</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Ratio (pct) of 2004 expected performance:"</span><span class="p">,</span> <span class="n">results</span><span class="p">[</span>
+    <span class="s2">"ex16_final_return_pct"</span><span class="p">],</span> <span class="s2">"%"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[58], line 2</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> chosen_threshold_13 <span style="color: rgb(98,98,98)">=</span> results[<span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">ex13_optimal_threshold</span><span style="color: rgb(175,0,0)">"</span>]
+<span class="ansi-green-fg">----&gt; 2</span> prob_2007 <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">gbc</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">predict_proba</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">X_2007</span><span class="ansi-yellow-bg">)</span>[:, <span style="color: rgb(98,98,98)">1</span>]
+<span class="ansi-green-intense-fg ansi-bold">      4</span> y_pred_2007 <span style="color: rgb(98,98,98)">=</span> (prob_2007 <span style="color: rgb(98,98,98)">&gt;</span><span style="color: rgb(98,98,98)">=</span> chosen_threshold_13)<span style="color: rgb(98,98,98)">.</span>astype(<span style="color: rgb(0,135,0)">int</span>)
+<span class="ansi-green-intense-fg ansi-bold">      6</span> y_true_2007 <span style="color: rgb(98,98,98)">=</span> y_2007<span style="color: rgb(98,98,98)">.</span>values<span style="color: rgb(98,98,98)">.</span>flatten()
+
+File <span class="ansi-green-fg">~/miniforge3/lib/python3.12/site-packages/sklearn/ensemble/_gb.py:1667</span>, in <span class="ansi-cyan-fg">GradientBoostingClassifier.predict_proba</span><span class="ansi-blue-fg">(self, X)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1646</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">predict_proba</span>(<span style="color: rgb(0,135,0)">self</span>, X):
+<span class="ansi-green-intense-fg ansi-bold">   1647</span> <span style="color: rgb(188,188,188)">    </span><span style="color: rgb(175,0,0)">"""Predict class probabilities for X.</span>
+<span class="ansi-green-intense-fg ansi-bold">   1648</span> 
+<span class="ansi-green-intense-fg ansi-bold">   1649</span> <span style="color: rgb(175,0,0)">    Parameters</span>
+<span class="ansi-green-fg">   (...)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1665</span> <span style="color: rgb(175,0,0)">        If the ``loss`` does not support probabilities.</span>
+<span class="ansi-green-intense-fg ansi-bold">   1666</span> <span style="color: rgb(175,0,0)">    """</span>
+<span class="ansi-green-fg">-&gt; 1667</span>     raw_predictions <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">decision_function</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">X</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1668</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_loss<span style="color: rgb(98,98,98)">.</span>predict_proba(raw_predictions)
+
+File <span class="ansi-green-fg">~/miniforge3/lib/python3.12/site-packages/sklearn/ensemble/_gb.py:1565</span>, in <span class="ansi-cyan-fg">GradientBoostingClassifier.decision_function</span><span class="ansi-blue-fg">(self, X)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1546</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">decision_function</span>(<span style="color: rgb(0,135,0)">self</span>, X):
+<span class="ansi-green-intense-fg ansi-bold">   1547</span> <span style="color: rgb(188,188,188)">    </span><span style="color: rgb(175,0,0)">"""Compute the decision function of ``X``.</span>
+<span class="ansi-green-intense-fg ansi-bold">   1548</span> 
+<span class="ansi-green-intense-fg ansi-bold">   1549</span> <span style="color: rgb(175,0,0)">    Parameters</span>
+<span class="ansi-green-fg">   (...)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1563</span> <span style="color: rgb(175,0,0)">        array of shape (n_samples,).</span>
+<span class="ansi-green-intense-fg ansi-bold">   1564</span> <span style="color: rgb(175,0,0)">    """</span>
+<span class="ansi-green-fg">-&gt; 1565</span>     X <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_validate_data</span><span class="ansi-yellow-bg">(</span>
+<span class="ansi-green-intense-fg ansi-bold">   1566</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">X</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">dtype</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">DTYPE</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">order</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">"</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">C</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">accept_sparse</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">"</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">csr</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">reset</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">False</span>
+<span class="ansi-green-intense-fg ansi-bold">   1567</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1568</span>     raw_predictions <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_raw_predict(X)
+<span class="ansi-green-intense-fg ansi-bold">   1569</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> raw_predictions<span style="color: rgb(98,98,98)">.</span>shape[<span style="color: rgb(98,98,98)">1</span>] <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(98,98,98)">1</span>:
+
+File <span class="ansi-green-fg">~/miniforge3/lib/python3.12/site-packages/sklearn/base.py:608</span>, in <span class="ansi-cyan-fg">BaseEstimator._validate_data</span><span class="ansi-blue-fg">(self, X, y, reset, validate_separately, cast_to_ndarray, **check_params)</span>
+<span class="ansi-green-intense-fg ansi-bold">    537</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">_validate_data</span>(
+<span class="ansi-green-intense-fg ansi-bold">    538</span>     <span style="color: rgb(0,135,0)">self</span>,
+<span class="ansi-green-intense-fg ansi-bold">    539</span>     X<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">no_validation</span><span style="color: rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg">   (...)</span>
+<span class="ansi-green-intense-fg ansi-bold">    544</span>     <span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">*</span>check_params,
+<span class="ansi-green-intense-fg ansi-bold">    545</span> ):
+<span class="ansi-green-intense-fg ansi-bold">    546</span> <span style="color: rgb(188,188,188)">    </span><span style="color: rgb(175,0,0)">"""Validate input data and set or check the `n_features_in_` attribute.</span>
+<span class="ansi-green-intense-fg ansi-bold">    547</span> 
+<span class="ansi-green-intense-fg ansi-bold">    548</span> <span style="color: rgb(175,0,0)">    Parameters</span>
+<span class="ansi-green-fg">   (...)</span>
+<span class="ansi-green-intense-fg ansi-bold">    606</span> <span style="color: rgb(175,0,0)">        validated.</span>
+<span class="ansi-green-intense-fg ansi-bold">    607</span> <span style="color: rgb(175,0,0)">    """</span>
+<span class="ansi-green-fg">--&gt; 608</span>     <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_check_feature_names</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">X</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">reset</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">reset</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    610</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> y <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_get_tags()[<span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">requires_y</span><span style="color: rgb(175,0,0)">"</span>]:
+<span class="ansi-green-intense-fg ansi-bold">    611</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">ValueError</span>(
+<span class="ansi-green-intense-fg ansi-bold">    612</span>             <span style="color: rgb(175,0,0)">f</span><span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">This </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span><span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span><span style="color: rgb(0,0,135)">__class__</span><span style="color: rgb(98,98,98)">.</span><span style="color: rgb(0,0,135)">__name__</span><span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span style="color: rgb(175,0,0)"> estimator </span><span style="color: rgb(175,0,0)">"</span>
+<span class="ansi-green-intense-fg ansi-bold">    613</span>             <span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">requires y to be passed, but the target y is None.</span><span style="color: rgb(175,0,0)">"</span>
+<span class="ansi-green-intense-fg ansi-bold">    614</span>         )
+
+File <span class="ansi-green-fg">~/miniforge3/lib/python3.12/site-packages/sklearn/base.py:535</span>, in <span class="ansi-cyan-fg">BaseEstimator._check_feature_names</span><span class="ansi-blue-fg">(self, X, reset)</span>
+<span class="ansi-green-intense-fg ansi-bold">    530</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> missing_names <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> unexpected_names:
+<span class="ansi-green-intense-fg ansi-bold">    531</span>     message <span style="color: rgb(98,98,98)">+</span><span style="color: rgb(98,98,98)">=</span> (
+<span class="ansi-green-intense-fg ansi-bold">    532</span>         <span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">Feature names must be in the same order as they were in fit.</span><span class="ansi-bold" style="color: rgb(175,95,0)">\n</span><span style="color: rgb(175,0,0)">"</span>
+<span class="ansi-green-intense-fg ansi-bold">    533</span>     )
+<span class="ansi-green-fg">--&gt; 535</span> <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">ValueError</span>(message)
+
+<span class="ansi-red-fg">ValueError</span>: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- C(Channel)[T.C]
+- C(Channel)[T.R]
+- C(Channel)[T.T]
+- C(First_Time_Homebuyer_Flag)[T.Y]
+- C(Number_of_Borrowers)[T.2.0]
+- ...
+Feature names seen at fit time, yet now missing:
+- C(Q("Channel"))[T.C]
+- C(Q("Channel"))[T.R]
+- C(Q("Channel"))[T.T]
+- C(Q("First Time Homebuyer Flag"))[T.Y]
+- C(Q("Number of Borrowers"))[T.2.0]
+- ...
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -9410,6 +10569,19 @@ Name: count, dtype: int64</pre>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Exercise-17">Exercise 17<a class="anchor-link" href="#Exercise-17">¶</a></h3><p>How did the performance of your model against your test data (from 2004) compare to your model's actual performance in later years (the 2007 data)? What lesson from our class readings does this illustrate, and how does it relate to internal and external validity?</p>
 <p>The question is worth several points, and is meant to be the place where you reflect on why I made you do all this. Your answer should not be a couple sentences.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<blockquote>
+<p>When we tested on the 2004 hold‑out set, the model’s performance looked decent based on the cost function. However, mortgages originated in 2007 turned out to have much higher delinquency rates, and the average value of the model’s recommended purchases was dramatically lower than the test predictions. This is a prime example of external validity failure or distribution shift: the environment changed (i.e., the lead‑up to the 2008 financial crisis), so a model trained on 2004 data failed to generalize to 2007. It also illustrates the lesson from our readings that good test scores on one dataset do not guarantee good real‑world performance if conditions or distributions shift.</p>
+</blockquote>
 </div>
 </div>
 </div>
