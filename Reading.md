@@ -318,8 +318,7 @@ Threats to Internal Validity
         - Browser redirects causing user loss.
         - Bots handling redirects differently.
         - Asymmetric user behavior (e.g., bookmarking Treatment pages).
-5. Residual or Carryover Effects
-    - Effects of prior experiments or bugs can persist and affect new results.
+5. Residual or Carryover Effects of prior experiments or bugs can persist and affect new results.
     - Examples:
         - LinkedIn’s "People You May Know" feature carried over effects.
         - Cookies storing experiment-related information from previous runs.
@@ -343,6 +342,7 @@ Threats to Internal Validity
     - Monitor for data pipeline issues that could skew results.
 
 ## 19 A/A Test
+- doing the same test as A/B test but the two arms are the same to validate the baseline
 - Step-by-Step Explanation and Answer:
     - A/A tests are a critical tool for validating the integrity of an experimentation platform. Here's a structured breakdown of their purpose, execution, and implications:
 
@@ -407,7 +407,7 @@ Conclusion
 
 ## 2025//2/6 Lecture
 - data science is about solving problems
-- solve problems by answeringh questions
+- solve problems by answering questions
 - errors and uncertainty
     - understand errors
     - understand differences among models
@@ -502,3 +502,26 @@ Conclusion
 |------|-----|-----|---|
 | D=0  |     |   5 | 0 |
 | D=1  |     |     |   |
+
+
+## 2025/03/18 Lecture
+- OEC: Overall Evaluation Criterion
+    - Alignment with Business Goals
+    - Sensitivity
+    - Robustness
+    - Interpretability
+
+- multiple test
+
+# Midterm topics
+- explanatory questions
+- causal questions
+- another question
+- internal validity
+- external validity
+- confusion matrix and related
+- differential treatment effects
+- baseline differences
+- Fundamental problem of causal inference
+- big three questions
+- AUC
