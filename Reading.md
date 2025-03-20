@@ -294,7 +294,44 @@ Key Takeaways
 - Guardrails: Ensure experiment integrity via invariants.
 - Context Matters: Costs, risks, and trade-offs influence decisions beyond pure statistics.
 
-## 3 threads of internal validity
+## 3 Twyman’s Law and Experimentation Trustworthiness
+1. Twyman’s Law:
+    - Principle: Unusual or "interesting" data is often due to errors (e.g., logging issues, computational mistakes).
+    - Application: Extreme results (positive/negative) should prompt skepticism and validation checks (e.g., sample ratio mismatch tests).
+2. Common Statistical Misinterpretations:
+    - p-value Misuse:
+        - Myth: p-value = probability the Null hypothesis is true.
+        - Reality: p-value = probability of observing data assuming the Null hypothesis is true.
+    - Peeking at Results: Continuously checking p-values inflates false positives. Solutions: predefine experiment duration or use sequential testing.
+    - Multiple Hypothesis Testing: Testing many metrics/segments increases false discoveries. Use False Discovery Rate (FDR) corrections.
+    - Confidence Intervals (CI): Overlapping CIs ≠ no effect. Non-overlapping CIs imply significance.
+3. Threats to Internal Validity:
+    - SUTVA Violations: Units interfere (e.g., social networks, shared resources like CPU).
+    - Survivorship Bias: Analyzing only "survivors" skews results (e.g., WWII bomber armor analysis).
+    - Sample Ratio Mismatch (SRM):
+        - Cause: Imbalanced variant allocation (e.g., redirects, bot filtering).
+        - Example: MSN’s bot filter removed engaged Treatment users, reversing results.
+    - Intention-to-Treat (ITT): Analyze users by initial assignment, not compliance (avoids selection bias).
+
+4. Threats to External Validity:
+    - Primacy Effects: Users adapt slowly to changes (e.g., initial dislike of website redesign).
+    - Novelty Effects: Short-term engagement spikes (e.g., fake "busy operator" messaging).
+    - Segment Differences:
+        - Heterogeneous Treatment Effects: Treatment impacts vary by segments (e.g., browser compatibility issues).
+        - Example: MSN’s iOS vs. Android click-tracking discrepancies.
+    - Simpson’s Paradox: Aggregated data shows opposite trends of segmented data (e.g., conversion rates across days/markets).
+
+5. Key Solutions & Practices:
+    - Pre-experiment Checks: A/A tests, randomization integrity (e.g., cryptographic hashing).
+    - Avoid Redirects: Use server-side logic to prevent SRM.
+    - Segment Analysis: Check pre-experiment segments (e.g., countries, browsers) to avoid post-hoc bias.
+    - Monitor Over Time: Plot metric trends to detect novelty/primacy decay.
+
+- Quiz Focus: Understand Twyman’s Law, differentiate internal/external validity threats, interpret p-values/CIs correctly, recognize Simpson’s paradox, and apply real-world examples (e.g., MSN bot filtering, WWII survivorship bias).
+
+
+
+### 3.1 threads of internal validity
 
 General Definition
 - Internal Validity: The extent to which an experiment accurately measures the causal relationship between treatment and outcome, without external confounding factors.
@@ -340,6 +377,39 @@ Threats to Internal Validity
     - Ensure randomization integrity with strong hash functions.
     - Consider carryover effects from previous experiments.
     - Monitor for data pipeline issues that could skew results.
+
+
+
+## 7 Metrics for Experimentation and the OEC
+1. Metrics for Experimentation and the Overall Evaluation Criterion (OEC)
+    - Measurement is critical: "Tell me how you measure me, and I will tell you how I will behave."
+    - A good metric should measure output, not just activity. Example: Sales should be measured by orders, not calls.
+2. Characteristics of Good Experimentation Metrics
+    - Measurable: Some things (e.g., post-purchase satisfaction) are hard to measure.
+    - Attributable: You need to link metric values to experiment variants (e.g., app crashes must be attributed to a specific version).
+    - Sensitive and timely: Metrics should be able to detect meaningful changes in a reasonable timeframe.
+3. Business Metrics vs. Experimentation Metrics
+    - Business metrics (e.g., stock price) are often not suitable for experiments.
+    - Experimentation metrics should be carefully chosen based on sensitivity, attribution, and measurability.
+4. Combining Metrics into an Overall Evaluation Criterion (OEC)
+    - Organizations often have multiple key metrics and need a way to balance tradeoffs.
+    - Single-metric approaches (e.g., "One Metric That Matters") are often too simplistic.
+    - Example: A pilot cannot rely on a single gauge; multiple factors must be monitored.
+    - The OEC can be a weighted sum of normalized metrics.
+5. Case Studies on OEC
+    - Amazon Email System: Initial revenue-based OEC led to excessive emails → Annoyed users unsubscribed → Long-term revenue loss.
+        - New OEC included "unsubscribe lifetime loss," drastically changing optimization strategies.
+    - Bing’s Search Engine: A bug increased short-term revenue but degraded user experience.
+        - Short-term gains (higher queries per user and ad clicks) conflicted with long-term business goals.
+- Quiz Preparation Strategy
+    - Focus on why good metrics matter and how they should be chosen.
+    - Understand the trade-offs in designing an OEC.
+    - Be able to explain real-world examples like Amazon and Bing.
+    - Know the three key characteristics of a good experimentation metric (Measurable, Attributable, Sensitive).
+
+
+
+
 
 ## 19 A/A Test
 - doing the same test as A/B test but the two arms are the same to validate the baseline
@@ -402,6 +472,51 @@ Threats to Internal Validity
 Conclusion
 - A/A tests are the cornerstone of trustworthy experimentation. They expose flaws in statistical methods, infrastructure, and metric design, ensuring that subsequent A/B tests yield valid results. By rigorously applying A/A tests, organizations can avoid costly false discoveries and build confidence in their data-driven decisions.
 
+## 22 Leakage and Interference between Variants
+1. Key Concept:
+    - SUTVA Violation: The Stable Unit Treatment Value Assumption (SUTVA) is violated when a unit’s behavior is influenced by other units’ variant assignments, leading to interference (spillover/leakage).
+2. Types of Interference:
+    - Direct Connections:
+        - Social networks (e.g., Facebook messages, LinkedIn posts).
+        - Communication tools (e.g., Skype calls between users in different variants).
+    - Indirect Connections:
+        - Shared resources (e.g., Airbnb inventory, Uber driver availability, ad campaign budgets).
+        - Latent variables (e.g., CPU usage, sub-user units like pageviews affecting user behavior).
+3. Consequences:
+    - Biased experiment results (e.g., underestimated/overestimated Treatment effects).
+    - Example: A Treatment improving ad clicks might drain a shared budget, inflating its perceived success.
+4. Solutions to Address Interference:
+    - Isolation Techniques:
+        - Resource Splitting: Separate budgets/training data by variant.
+        - Geo/Time-Based Randomization: Assign variants by region or time (e.g., daily flips).
+        - Network-Cluster/Ego-Centric Randomization: Group users into clusters or focus on "ego-alter" relationships in social networks.
+    - Edge-Level Analysis: Compare interactions (e.g., messages) between Treatment-Treatment vs. Treatment-Control users.
+        - Rule-of-Thumb: Estimate ecosystem impact (e.g., downstream metrics like message replies).
+5. Detection & Monitoring:
+    - Use ramp phases (Chapter 15) to catch severe interference early.
+    - Monitor metrics for anomalies (e.g., budget exhaustion, unexpected engagement drops).
+- Quiz Focus: Understand SUTVA violations, real-world examples of direct/indirect interference, isolation strategies, and detection methods.
+
+## Summary of Causal Questions, Experiments, and External Validity
+1. Key Concepts:
+    - Internal Validity: Experiments (e.g., RCTs, A/B tests) excel at isolating causal effects by controlling variables.
+    - External Validity: Challenges arise in generalizing results beyond the experiment’s context due to time effects and scaling effects.
+2. Time Effects:
+    - Novelty Effects: Short-term engagement spikes because users interact with new features/products out of curiosity. Example: A website redesign initially boosts clicks, but interest fades.
+    - Primacy Effects: Users resist changes initially but adapt over time. Example: Users dislike a new app layout temporarily, then adjust.
+    - Risk: Short experiments may misrepresent long-term outcomes (overestimating novelty benefits or underestimating primacy adoption).
+3. Scaling Effects:
+    - General Equilibrium Effects: Small-scale experiments miss ecosystem-wide behavioral changes. Example:
+        - Amazon sellers don’t adjust listings in a small test but would globally, altering market dynamics.
+        - TikTok algorithm changes for 1% of users won’t influence creators, but a full rollout would shift content strategies.
+    - Example: A healthcare experiment in India improved nurse attendance initially, but nurses later organized against fines, nullifying gains.
+
+4. Key Takeaways:
+    - Experiments prioritize internal validity but often sacrifice external validity.
+    - Temporal and scaling biases can distort real-world outcomes.
+    - Critical to consider long-term monitoring and broader ecosystem impacts when interpreting results.
+
+- Quiz Focus: Understand the trade-offs between internal/external validity, define novelty/primacy effects, explain general equilibrium effects, and apply examples (e.g., Amazon, healthcare study).
 
 
 
@@ -524,4 +639,7 @@ Conclusion
 - baseline differences
 - Fundamental problem of causal inference
 - big three questions
+    - Use data to answer - questions not just max AUC score
+    - Choose to use proper tool
+    - Reasoning rigorously about uncertainty and error
 - AUC
