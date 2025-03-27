@@ -841,3 +841,6 @@ Conclusion
 - 4 and 5 not difficult:
     - sampling uncertainty: small sampling from large population, not representative
     - modeling uncertainty: 
+
+## causal report
+- 

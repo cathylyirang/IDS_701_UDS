@@ -62,3 +62,4 @@
     - Choose to use proper tool
     - Reasoning rigorously about uncertainty and error
 - AUC
+- counterfactual definition
