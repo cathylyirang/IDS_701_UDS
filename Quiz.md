@@ -45,3 +45,20 @@
     - Identifying individual entities for additional attention.
 - **Accuracy**: Why isn't it meaningful to report the accuracy of a classification model without context?
     - These are all reasons accuracy is meaningless without context.
+
+
+# Midterm topics
+- explanatory questions
+- causal questions
+- another question
+- internal validity
+- external validity
+- confusion matrix and related
+- differential treatment effects
+- baseline differences
+- Fundamental problem of causal inference
+- big three questions
+    - Use data to answer - questions not just max AUC score
+    - Choose to use proper tool
+    - Reasoning rigorously about uncertainty and error
+- AUC

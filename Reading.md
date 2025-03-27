@@ -518,6 +518,27 @@ Conclusion
 
 - Quiz Focus: Understand the trade-offs between internal/external validity, define novelty/primacy effects, explain general equilibrium effects, and apply examples (e.g., Amazon, healthcare study).
 
+## GHV Chapter 16: Design and Sample Size Decisions
+1. Critique of Statistical Power:
+    - Winner’s Curse: Low-power studies often yield overestimated effect sizes (Type M errors) or wrong sign effects (Type S errors) when results are "statistically significant."
+    - Flawed Assumptions: Power analyses depend on hypothesized effect sizes (unknown pre-study), leading to unrealistic expectations.
+2. Key Design Principles:
+    - Precision > Significance: Focus on minimizing standard errors (SE) rather than chasing p-values.
+    - Effect Size vs. Sample Size: Doubling effect size reduces required sample size more than doubling n (SE ∝ 1/√n).
+    - Generalizability: Ensure results apply beyond study conditions (external validity).
+3. Sample Size Formulas:
+    - Proportions: For $SE ≤ 0.05$, use $n=(0.5/SE)^2$
+    - Continuous Outcomes: $n=(5.6σ/Δ)^2$ for 80% power (Δ = true effect, σ = SD).
+    - Interactions: Require 4× larger n for same effect as main effects; 16× larger n for half the effect.
+4. Post-Data Collection Analysis:
+    - nSimulate Fake Data: Assess bias/precision under assumed models (e.g., non-random treatment assignment).
+    - nAdjust for Confounders: Including pre-treatment variables (e.g., pre-test scores) reduces SE.
+5. Practical Implications:
+    - Avoid Low-Power Studies: Prone to misleading results; use prior data to set realistic effect sizes.
+    - Pre-Register Analyses: Prevent p-hacking/multiple comparisons.
+    - Simulate Designs: Anticipate biases (e.g., selection effects) and validate models.
+- Quiz Focus: Understand pitfalls of low power (Type S/M errors), sample size formulas for proportions/continuous outcomes, challenges in estimating interactions, and the role of simulations in design validation.
+
 
 
 ## 2025//2/6 Lecture
@@ -628,19 +649,195 @@ Conclusion
 
 - multiple test
 
-# Midterm topics
-- explanatory questions
-- causal questions
-- another question
-- internal validity
-- external validity
-- confusion matrix and related
-- differential treatment effects
-- baseline differences
-- Fundamental problem of causal inference
-- big three questions
-    - Use data to answer - questions not just max AUC score
-    - Choose to use proper tool
-    - Reasoning rigorously about uncertainty and error
-- AUC
+## 2025/03/25 Lecture
+- what is the probability of being a female have no effect on callbacks
+    - unknown if only given regular fit model
+- P-value = probability in the world the null hypothesis is true
+- Pr(A|B) = Pr(B|A)P(A) / Pr(B)  <-- Bayes
+    - 
+- Pr(Null|Data) = Pr(Data|Null)P(Null) / Pr(Data)
+    - Pr(Null|Data) $\propto$ Pr(Data|Null)P(Null)
+
+## Assessing Statistical Results: Magnitude, Precision, and Model Uncertainty
+
+1. Three Core Questions for Evaluating Statistical Results
+    - **Magnitude**: What are the real-world implications of the estimate?
+        - Example: A fertilizer increasing corn height by 7 cm may be statistically significant, but is it economically meaningful for farmers?
+        - Watch for: Confusion between percent change vs. percentage points (e.g., unemployment dropping from 5% to 4.85% vs. 2%).
+    - **Precision**: How reliable is the estimate? Use confidence intervals (CIs).
+        - Narrow CIs = high precision; wide CIs = high uncertainty.
+            - Example: A 95% CI of [2, 14] for a fertilizer effect means the true effect could be anywhere in this range.
+    - **Model Uncertainty**: Is the statistical model correctly specified?
+        - Check assumptions (e.g., linearity, variable selection, missing data handling) and perform sensitivity analysis (e.g., testing alternative models).
+2. Key Concepts
+    - Statistical vs. Practical **Significance**
+        - A tiny effect (e.g., 1 cm height increase) can be statistically significant with a large sample but irrelevant in practice.
+        - Always ask: "Does the effect size matter in the real world?"
+
+    - **Confidence Intervals (CIs)**
+        - A 95% CI means 95% of such intervals from repeated sampling would contain the true parameter.
+        - Misinterpretation: Avoid saying, "There’s a 95% chance the true value is in this CI." Instead, CIs reflect the range of plausible values given the data.
+    - Hypothesis Testing Pitfalls
+        - Case 2 (precise zero) vs. Case 5 (imprecise non-zero): Both highlight that "no effect" (failure to reject the null) doesn’t mean the effect is zero.
+        - Example: A CI spanning negative to positive values (e.g., [-1, 15]) is inconclusive, not proof of no effect.
+3. Model Uncertainty & Robustness
+    - Model Assumptions
+        - Include variable selection, functional form, and error term properties.
+        - Example: Assuming linearity between age and height may be invalid for adults.
+    - Sensitivity Analysis
+        - Test if results hold under different model specifications.
+        - Example: If adding a confounder (e.g., income) drastically changes the effect, the original model may be flawed.
+4. Examples to Remember
+    - Corn Fertilizer:
+        - A 7 cm increase (statistically significant) may not matter if the cost outweighs benefits.
+    - Unemployment Rate:
+        - A 3% drop (from 5% to 4.85%) vs. 3 percentage points (to 2%) have vastly different implications.
+    - Vaccine Efficacy:
+        - A 50% reduction in malaria incidence matters more if the baseline rate is high (e.g., 20% → 10%) vs. low (1% → 0.5%).
+5. Common Pitfalls & Solutions
+    - **Misinterpreting CIs**: Focus on the margin of error relative to practical significance.
+    - **Overreliance on p-values**: Use CIs to communicate uncertainty.
+    - **Ignoring Model Assumptions**: Validate assumptions with theory, prior evidence, and robustness checks.
+
+- Potential Quiz Questions
+    - Short Answer: Why can a statistically significant result lack practical importance?
+        - Answer: Large samples detect trivial effects (e.g., 1 cm height increase with n = 10,000).
+    - Interpretation: A study reports a 95% CI of [3, 9] for a drug’s effect. What does this mean?
+        - Answer: The true effect likely lies between 3 and 9. If a 5-point effect is meaningful, this result is both precise and important.
+    - Critique: A headline states, "Study proves new diet reduces weight!" The 95% CI is [-2, 10]. What’s wrong?
+        - Answer: The CI includes zero and negative values, so the effect is uncertain. "Proves" is misleading.
+    - Model Uncertainty: How would you assess if a study’s findings are robust?
+        - Answer: Check sensitivity analyses (e.g., varying model specifications, handling missing data).
+- Final Tips: Focus on distinguishing statistical vs. practical significance, interpreting CIs, and critiquing model validity. Use examples from the article to reinforce concepts!
+
+## Statistical Decision Theory (on Canvas). 550-556 (This is same as IDS 705 Lecture 8 Reading)
+
+1. Components of a Decision:
+    - $A_i$ - Alternatives: Choices available (e.g., which stock to buy).
+    - $S_j$ - States of Nature: Uncontrollable future events (e.g., bull/bear market).
+    - $P$ - Payoffs: Outcomes for each combination of alternative and state.
+2. Decision-Making Methods:
+    - Expected Monetary Value (EMV):
+        - Formula: $EMV(A_i) = ∑{P(S_j) \times Payoff(A_i,S_i)}$
+        - Example: For Kayser Chemicals: ${0.6×2400+0.4×1000=1840 dollars}$.
+    - Opportunity Loss (Regret):
+        - Calculate regret for each alternative by subtracting its payoff from the maximum payoff in that state.
+        - Expected Opportunity Loss (EOL): $EOL(A_i)= \Sigma {[P(S_j) \times Regret(A_i,S_j)]}$
+    - Strategies:
+        - Maximin: Choose the alternative with the best worst-case payoff (pessimistic).
+        - Maximax: Choose the alternative with the best best-case payoff (optimistic).
+        - Minimax Regret: Minimize the maximum regret.
+
+- practice problems
+    1. **EMV Calculation
+    Payoff Table:
+
+    | Alternative | \( S_1 \) (0.3) | \( S_2 \) (0.5) | \( S_3 \) (0.2) |
+    |-------------|------------------|------------------|------------------|
+    | \( A_1 \)   | \$50             | \$70             | \$100            |
+    | \( A_2 \)   | \$90             | \$40             | \$80             |
+    | \( A_3 \)   | \$70             | \$60             | \$90             |
+
+    Solution:
+    $$
+    \begin{aligned}
+    \text{EMV}(A_1) &= (50 \times 0.3) + (70 \times 0.5) + (100 \times 0.2) = \$70 \\
+    \text{EMV}(A_2) &= (90 \times 0.3) + (40 \times 0.5) + (80 \times 0.2) = \$63 \\
+    \text{EMV}(A_3) &= (70 \times 0.3) + (60 \times 0.5) + (90 \times 0.2) = \$69 \\
+    \end{aligned}
+    $$
+    Best choice: \( A_1 \) (highest EMV = \$70).
+
+    ---
+
+    2. **Opportunity Loss Table**
+    Regret Calculations:
+    $$
+    \begin{aligned}
+    \text{For } S_1: \text{Max payoff} = \$90 &\implies \text{Regrets: } A_1: 40,\ A_2: 0,\ A_3: 20 \\
+    \text{For } S_2: \text{Max payoff} = \$70 &\implies \text{Regrets: } A_1: 0,\ A_2: 30,\ A_3: 10 \\
+    \text{For } S_3: \text{Max payoff} = \$100 &\implies \text{Regrets: } A_1: 0,\ A_2: 20,\ A_3: 10 \\
+    \end{aligned}
+    $$
+
+    Opportunity Loss Table:
+
+    | Alternative | \( S_1 \) | \( S_2 \) | \( S_3 \) |
+    |-------------|-----------|-----------|-----------|
+    | \( A_1 \)   | 40        | 0         | 0         |
+    | \( A_2 \)   | 0         | 30        | 20        |
+    | \( A_3 \)   | 20        | 10        | 10        |
+
+    ---
+
+    3. **EOL Calculation**
+
+    Solution:
+    $$
+    \begin{aligned}
+    \text{EOL}(A_1) &= (40 \times 0.3) + (0 \times 0.5) + (0 \times 0.2) = \$12 \\
+    \text{EOL}(A_2) &= (0 \times 0.3) + (30 \times 0.5) + (20 \times 0.2) = \$19 \\
+    \text{EOL}(A_3) &= (20 \times 0.3) + (10 \times 0.5) + (10 \times 0.2) = \$13 \\
+    \end{aligned}
+    $$
+    Best choice: \( A_1 \) (lowest EOL = \$12).
+
+    ---
+
+    4. **Decision Strategies**
+
+    - Maximin: Choose the alternative with the best minimum payoff:  
+    $$
+    A_1: \$50,\ A_2: \$40,\ A_3: \$60 \implies \text{Choose } A_3
+    $$
+
+    - Maximax: Choose the alternative with the best maximum payoff:  
+    $$
+    A_1: \$100,\ A_2: \$90,\ A_3: \$90 \implies \text{Choose } A_1
+    $$
+
+    - Minimax Regret: Choose the alternative with the smallest maximum regret:  
+    $$
+    A_1: \text{Max regret} = 40,\ A_2: 30,\ A_3: 20 \implies \text{Choose } A_3
+    $$
+
+- Final Tips:
+    - EMV and EOL always align (e.g., both indicate $A_1$ is best in the example).
+    - Strategies (maximin, maximax, minimax) ignore probabilities and focus on risk attitude.
+
+- Quiz Readiness Checklist:
+    - Understand EMV and EOL calculations.
+    - Can create opportunity loss tables.
+    - Apply maximin, maximax, and minimax regret strategies.
+    - Interpret results in business contexts.
+
+## 2025/03/27 Lecture
+1. Case_1: <------|------(-7-)-------->
+2. Case_2: <-----(|-)------7---------->
+3. Case_3: <------|(-)-----7---------->
+4. Case_4: <------|(-------7-------)-->
+5. Case_5: <-----(|--------7--------)->
+
+- CI
+    - include 0: do not reject the null
+    - exclude 0: reject the null
+    - narrow: the outcome is precise zero
+    - wide: the outcome is imprecise non-zero
+    - 
+- precision
+- statistically significance
+- magnitude
 - 
+
+
+|  | precision | Significance | Confidence Interval |
+|--|----|----|----|
+|1|----|----|----|
+|2|----|----|----|
+|3|----|----|----|
+|4|----|----|----|
+|5|----|----|----|
+
+- 4 and 5 not difficult:
+    - sampling uncertainty: small sampling from large population, not representative
+    - modeling uncertainty: 
